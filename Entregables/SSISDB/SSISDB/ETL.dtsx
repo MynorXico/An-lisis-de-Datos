@@ -11,8 +11,8 @@
   DTS:LocaleID="4106"
   DTS:ObjectName="ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="164"
-  DTS:VersionGUID="{1B6A2FE4-9D9D-4DF5-8235-0A39DF0D4926}">
+  DTS:VersionBuild="168"
+  DTS:VersionGUID="{9211C3E7-B8BD-4904-8BF4-A78712A4064C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,13 +27,23 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{0883DF11-9E91-4FB7-B989-C24E951BF4AE}"
+      DTS:ObjectName="Administrador de conexiones con Excel 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\UserFiles\U\Análisis de Datos\Proyecto\HojasActualizadas\Status Candidatos B.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-LLLJTOF.AdmisionesProyecto]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{4E60EB9F-736B-4DEC-8895-3C19A534E518}"
       DTS:ObjectName="DESKTOP-LLLJTOF.AdmisionesProyecto">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=AdmisionesProyecto;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=Grupo8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -558,14 +568,14 @@
                   synchronousInputId="Package\Candidato\Columna derivada 2.Inputs[Entrada de columna derivada]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[FirstName]"
+                      refId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[LastName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Cálculo"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[FirstName]"
-                      name="FirstName"
+                      lineageId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[LastName]"
+                      name="LastName"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -582,14 +592,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[LastName]"
+                      refId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[FirstName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Cálculo"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[LastName]"
-                      name="LastName"
+                      lineageId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[FirstName]"
+                      name="FirstName"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1747,21 +1757,21 @@
                       externalMetadataColumnId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[ID_Candidato]"
                       lineageId="Package\Candidato\Combinación de mezcla 3.Outputs[Salida de combinación de mezcla].Columns[NUMERO]" />
                     <inputColumn
-                      refId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[FirstName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="FirstName"
-                      externalMetadataColumnId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre]"
-                      lineageId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[FirstName]" />
-                    <inputColumn
                       refId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="LastName"
-                      externalMetadataColumnId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Apellido]"
+                      externalMetadataColumnId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre]"
                       lineageId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[FirstName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Candidato\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[Apellido]"
+                      lineageId="Package\Candidato\Columna derivada 2.Outputs[Salida de columna derivada].Columns[FirstName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4638,19 +4648,19 @@
               startId="Package\Candidato\Combinación de mezcla 1.Outputs[Salida de combinación de mezcla]" />
             <path
               refId="Package\Candidato.Paths[Salida de ordenación8]"
+              endId="Package\Candidato\Combinación de mezcla 2.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar 5.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación7]"
               endId="Package\Candidato\Combinación de mezcla 2.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\Candidato\Ordenar 6.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\Candidato.Paths[Salida de ordenación7]"
+              refId="Package\Candidato.Paths[Salida de ordenación6]"
               endId="Package\Candidato\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\Candidato\Ordenar 2.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación6]"
-              endId="Package\Candidato\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 3.Outputs[Salida de ordenación]" />
             <path
               refId="Package\Candidato.Paths[Salida de ordenación5]"
               endId="Package\Candidato\Columna derivada 1.Inputs[Entrada de columna derivada]"
@@ -4658,9 +4668,9 @@
               startId="Package\Candidato\Ordenar 1.Outputs[Salida de ordenación]" />
             <path
               refId="Package\Candidato.Paths[Salida de ordenación2]"
-              endId="Package\Candidato\Combinación de mezcla 2.Inputs[Entrada derecha de combinación de mezcla]"
+              endId="Package\Candidato\Combinación de mezcla 1.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 5.Outputs[Salida de ordenación]" />
+              startId="Package\Candidato\Ordenar.Outputs[Salida de ordenación]" />
             <path
               refId="Package\Candidato.Paths[Salida de ordenación3]"
               endId="Package\Candidato\Combinación de mezcla 1.Inputs[Entrada izquierda de combinación de mezcla]"
@@ -4668,19 +4678,19 @@
               startId="Package\Candidato\Ordenar 4.Outputs[Salida de ordenación]" />
             <path
               refId="Package\Candidato.Paths[Salida de ordenación1]"
-              endId="Package\Candidato\Combinación de mezcla 1.Inputs[Entrada derecha de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación]"
               endId="Package\Candidato\Combinación de mezcla 3.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\Candidato\Ordenar 7.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\Candidato.Paths[Salida de ordenación4]"
+              refId="Package\Candidato.Paths[Salida de ordenación]"
               endId="Package\Candidato\Combinación de mezcla 3.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\Candidato\Ordenar 7 1.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación4]"
+              endId="Package\Candidato\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar 3.Outputs[Salida de ordenación]" />
             <path
               refId="Package\Candidato.Paths[Salida de origen de Excel]"
               endId="Package\Candidato\División Nombre Candidato.Inputs[Entrada de división condicional]"
@@ -4688,19 +4698,19 @@
               startId="Package\Candidato\Origen de Excel.Outputs[Salida de origen de Excel]" />
             <path
               refId="Package\Candidato.Paths[Salida de origen de OLE DB2]"
-              endId="Package\Candidato\Ordenar.Inputs[Entrada de ordenación]"
-              name="Salida de origen de OLE DB"
-              startId="Package\Candidato\Diversificado.Outputs[Salida de origen de OLE DB]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de origen de OLE DB]"
               endId="Package\Candidato\Ordenar 5.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\Candidato\Municipio.Outputs[Salida de origen de OLE DB]" />
             <path
-              refId="Package\Candidato.Paths[Salida de origen de OLE DB1]"
+              refId="Package\Candidato.Paths[Salida de origen de OLE DB]"
               endId="Package\Candidato\Ordenar 7 1.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\Candidato\Carrera.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de origen de OLE DB1]"
+              endId="Package\Candidato\Ordenar.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Candidato\Diversificado.Outputs[Salida de origen de OLE DB]" />
             <path
               refId="Package\Candidato.Paths[Salida de origen de OLE DB3]"
               endId="Package\Candidato\Ordenar 1.Inputs[Entrada de ordenación]"
@@ -39370,7 +39380,7 @@
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="STATUS"
-                      lineageId="Package\Status Admisiones\725:invalid">
+                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[STATUS]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -39444,7 +39454,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
-                          name="SortColumnId">#{Package\Status Admisiones\725:invalid}</property>
+                          name="SortColumnId">#{Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[STATUS]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -39792,7 +39802,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">Hoja1$</property>
+                  name="OpenRowset">Sheet1$</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -39819,8 +39829,8 @@
               <connections>
                 <connection
                   refId="Package\Status Admisiones\Origen de Excel.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel]"
-                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -39858,210 +39868,14 @@
                       name="NOMBRE CANDIDATO"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EDAD]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EDAD]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EDAD]"
-                      name="EDAD"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Genero]"
+                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[STATUS]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Genero]"
+                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[STATUS]"
                       length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Genero]"
-                      name="Genero"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CARRERA]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CARRERA]"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CARRERA]"
-                      name="CARRERA"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[COLEGIO]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[COLEGIO]"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[COLEGIO]"
-                      name="COLEGIO"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[DIVERSIFICADO]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[DIVERSIFICADO]"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[DIVERSIFICADO]"
-                      name="DIVERSIFICADO"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[PAIS]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[PAIS]"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[PAIS]"
-                      name="PAIS"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[DEPARTAMENTO]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[DEPARTAMENTO]"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[DEPARTAMENTO]"
-                      name="DEPARTAMENTO"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[MUNICIPIO]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[MUNICIPIO]"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[MUNICIPIO]"
-                      name="MUNICIPIO"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[GRUPO DE ADMISIÓN]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[GRUPO DE ADMISIÓN]"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[GRUPO DE ADMISIÓN]"
-                      name="GRUPO DE ADMISIÓN"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[FECHA EXAMEN]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[FECHA EXAMEN]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[FECHA EXAMEN]"
-                      name="FECHA EXAMEN"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NUMERO TOTAL DE ACIERTOS]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NUMERO TOTAL DE ACIERTOS]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NUMERO TOTAL DE ACIERTOS]"
-                      name="NUMERO TOTAL DE ACIERTOS"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[PORCENTAJE DE ACIERTOS]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[PORCENTAJE DE ACIERTOS]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[PORCENTAJE DE ACIERTOS]"
-                      name="PORCENTAJE DE ACIERTOS"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NUMERO TOTAL DE PREGUNTAS]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NUMERO TOTAL DE PREGUNTAS]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NUMERO TOTAL DE PREGUNTAS]"
-                      name="NUMERO TOTAL DE PREGUNTAS"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[HABILIDADES VERBALES]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[HABILIDADES VERBALES]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[HABILIDADES VERBALES]"
-                      name="HABILIDADES VERBALES"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[HABILIDADES CUANTITATIVAS]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[HABILIDADES CUANTITATIVAS]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[HABILIDADES CUANTITATIVAS]"
-                      name="HABILIDADES CUANTITATIVAS"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESPAÑOL]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESPAÑOL]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESPAÑOL]"
-                      name="ESPAÑOL"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[MATEMÁTICAS]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[MATEMÁTICAS]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[MATEMÁTICAS]"
-                      name="MATEMÁTICAS"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CIENCIAS NATURALES]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CIENCIAS NATURALES]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CIENCIAS NATURALES]"
-                      name="CIENCIAS NATURALES"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CIENCIAS SOCIALES]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CIENCIAS SOCIALES]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CIENCIAS SOCIALES]"
-                      name="CIENCIAS SOCIALES"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESP: MATEMÁTICA PARA EL CÁLCULO]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESP: MATEMÁTICA PARA EL CÁLCULO]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESP: MATEMÁTICA PARA EL CÁLCULO]"
-                      name="ESP: MATEMÁTICA PARA EL CÁLCULO"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESP: FÍSICA]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESP: FÍSICA]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESP: FÍSICA]"
-                      name="ESP: FÍSICA"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESP: QUÍMICA]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESP: QUÍMICA]"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[ESP: QUÍMICA]"
-                      name="ESP: QUÍMICA"
+                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].Columns[STATUS]"
+                      name="STATUS"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -40080,101 +39894,10 @@
                       length="255"
                       name="NOMBRE CANDIDATO" />
                     <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EDAD]"
-                      dataType="r8"
-                      name="EDAD" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Genero]"
+                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[STATUS]"
                       dataType="wstr"
                       length="255"
-                      name="Genero" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CARRERA]"
-                      dataType="wstr"
-                      length="255"
-                      name="CARRERA" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[COLEGIO]"
-                      dataType="wstr"
-                      length="255"
-                      name="COLEGIO" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[DIVERSIFICADO]"
-                      dataType="wstr"
-                      length="255"
-                      name="DIVERSIFICADO" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[PAIS]"
-                      dataType="wstr"
-                      length="255"
-                      name="PAIS" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[DEPARTAMENTO]"
-                      dataType="wstr"
-                      length="255"
-                      name="DEPARTAMENTO" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[MUNICIPIO]"
-                      dataType="wstr"
-                      length="255"
-                      name="MUNICIPIO" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[GRUPO DE ADMISIÓN]"
-                      dataType="wstr"
-                      length="255"
-                      name="GRUPO DE ADMISIÓN" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[FECHA EXAMEN]"
-                      dataType="date"
-                      name="FECHA EXAMEN" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NUMERO TOTAL DE ACIERTOS]"
-                      dataType="r8"
-                      name="NUMERO TOTAL DE ACIERTOS" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[PORCENTAJE DE ACIERTOS]"
-                      dataType="r8"
-                      name="PORCENTAJE DE ACIERTOS" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NUMERO TOTAL DE PREGUNTAS]"
-                      dataType="r8"
-                      name="NUMERO TOTAL DE PREGUNTAS" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[HABILIDADES VERBALES]"
-                      dataType="r8"
-                      name="HABILIDADES VERBALES" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[HABILIDADES CUANTITATIVAS]"
-                      dataType="r8"
-                      name="HABILIDADES CUANTITATIVAS" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESPAÑOL]"
-                      dataType="r8"
-                      name="ESPAÑOL" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[MATEMÁTICAS]"
-                      dataType="r8"
-                      name="MATEMÁTICAS" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CIENCIAS NATURALES]"
-                      dataType="r8"
-                      name="CIENCIAS NATURALES" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CIENCIAS SOCIALES]"
-                      dataType="r8"
-                      name="CIENCIAS SOCIALES" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESP: MATEMÁTICA PARA EL CÁLCULO]"
-                      dataType="r8"
-                      name="ESP: MATEMÁTICA PARA EL CÁLCULO" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESP: FÍSICA]"
-                      dataType="r8"
-                      name="ESP: FÍSICA" />
-                    <externalMetadataColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[ESP: QUÍMICA]"
-                      dataType="r8"
-                      name="ESP: QUÍMICA" />
+                      name="STATUS" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -40199,123 +39922,11 @@
                       lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NOMBRE CANDIDATO]"
                       name="NOMBRE CANDIDATO" />
                     <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EDAD]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EDAD]"
-                      name="EDAD" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Genero]"
+                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[STATUS]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Genero]"
-                      name="Genero" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CARRERA]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CARRERA]"
-                      name="CARRERA" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[COLEGIO]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[COLEGIO]"
-                      name="COLEGIO" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[DIVERSIFICADO]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[DIVERSIFICADO]"
-                      name="DIVERSIFICADO" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[PAIS]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[PAIS]"
-                      name="PAIS" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[DEPARTAMENTO]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[DEPARTAMENTO]"
-                      name="DEPARTAMENTO" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[MUNICIPIO]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[MUNICIPIO]"
-                      name="MUNICIPIO" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[GRUPO DE ADMISIÓN]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[GRUPO DE ADMISIÓN]"
-                      name="GRUPO DE ADMISIÓN" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[FECHA EXAMEN]"
-                      dataType="date"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[FECHA EXAMEN]"
-                      name="FECHA EXAMEN" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NUMERO TOTAL DE ACIERTOS]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NUMERO TOTAL DE ACIERTOS]"
-                      name="NUMERO TOTAL DE ACIERTOS" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[PORCENTAJE DE ACIERTOS]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[PORCENTAJE DE ACIERTOS]"
-                      name="PORCENTAJE DE ACIERTOS" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NUMERO TOTAL DE PREGUNTAS]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NUMERO TOTAL DE PREGUNTAS]"
-                      name="NUMERO TOTAL DE PREGUNTAS" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[HABILIDADES VERBALES]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[HABILIDADES VERBALES]"
-                      name="HABILIDADES VERBALES" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[HABILIDADES CUANTITATIVAS]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[HABILIDADES CUANTITATIVAS]"
-                      name="HABILIDADES CUANTITATIVAS" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESPAÑOL]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESPAÑOL]"
-                      name="ESPAÑOL" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[MATEMÁTICAS]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[MATEMÁTICAS]"
-                      name="MATEMÁTICAS" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CIENCIAS NATURALES]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CIENCIAS NATURALES]"
-                      name="CIENCIAS NATURALES" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CIENCIAS SOCIALES]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CIENCIAS SOCIALES]"
-                      name="CIENCIAS SOCIALES" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESP: MATEMÁTICA PARA EL CÁLCULO]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESP: MATEMÁTICA PARA EL CÁLCULO]"
-                      name="ESP: MATEMÁTICA PARA EL CÁLCULO" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESP: FÍSICA]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESP: FÍSICA]"
-                      name="ESP: FÍSICA" />
-                    <outputColumn
-                      refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESP: QUÍMICA]"
-                      dataType="r8"
-                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ESP: QUÍMICA]"
-                      name="ESP: QUÍMICA" />
+                      lineageId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[STATUS]"
+                      name="STATUS" />
                     <outputColumn
                       refId="Package\Status Admisiones\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
                       dataType="i4"
@@ -41455,29 +41066,77 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="126,42"
+          Id="Package\Candidato\Ordenar 7"
+          TopLeft="618,978" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Candidato\Ordenar 7 1"
+          TopLeft="832,980" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Candidato\División Nombre Candidato"
+          TopLeft="118,167" />
+        <NodeLayout
           Size="168,42"
           Id="Package\Candidato\Destino de OLE DB"
           TopLeft="411,1310" />
-        <NodeLayout
-          Size="117,42"
-          Id="Package\Candidato\Ordenar"
-          TopLeft="570,590" />
         <NodeLayout
           Size="139,42"
           Id="Package\Candidato\Diversificado"
           TopLeft="606,481.166666666667" />
         <NodeLayout
+          Size="117,42"
+          Id="Package\Candidato\Ordenar"
+          TopLeft="570,590" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Candidato\Colegio"
+          TopLeft="441,123" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Candidato\Ordenar 4"
+          TopLeft="276.666666666667,580" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Candidato\Columna derivada 1"
+          TopLeft="429,297.714285714286" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Candidato\Ordenar 2"
+          TopLeft="134,292" />
+        <NodeLayout
           Size="126,42"
           Id="Package\Candidato\Ordenar 3"
           TopLeft="452.571428571429,382.428571428571" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Candidato\Ordenar 6"
+          TopLeft="495,793" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Candidato\Columna derivada"
+          TopLeft="731,1140" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Candidato\Columna derivada 2"
+          TopLeft="683,1276" />
+        <NodeLayout
+          Size="153,43"
+          Id="Package\Candidato\Origen de Excel"
+          TopLeft="114,57" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Candidato\Combinación de mezcla 1"
+          TopLeft="372,721.333333333333" />
         <NodeLayout
           Size="190,42"
           Id="Package\Candidato\Combinación de mezcla"
           TopLeft="206,476" />
         <NodeLayout
           Size="199,42"
-          Id="Package\Candidato\Combinación de mezcla 1"
-          TopLeft="372,721.333333333333" />
+          Id="Package\Candidato\Combinación de mezcla 2"
+          TopLeft="532,879" />
         <NodeLayout
           Size="123,42"
           Id="Package\Candidato\Municipio"
@@ -41487,61 +41146,295 @@
           Id="Package\Candidato\Ordenar 5"
           TopLeft="744.333333333333,783.333333333333" />
         <NodeLayout
-          Size="113,42"
-          Id="Package\Candidato\Colegio"
-          TopLeft="441,123" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Candidato\Ordenar 2"
-          TopLeft="134,292" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Candidato\Columna derivada 1"
-          TopLeft="429,297.714285714286" />
-        <NodeLayout
-          Size="153,43"
-          Id="Package\Candidato\Origen de Excel"
-          TopLeft="114,57" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Candidato\División Nombre Candidato"
-          TopLeft="118,167" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Candidato\Combinación de mezcla 3"
-          TopLeft="706,1057" />
-        <NodeLayout
           Size="126,42"
           Id="Package\Candidato\Ordenar 1"
           TopLeft="418,219" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\Candidato\Combinación de mezcla 2"
-          TopLeft="532,879" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Candidato\Ordenar 7"
-          TopLeft="618,978" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Candidato\Ordenar 4"
-          TopLeft="276.666666666667,580" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Candidato\Columna derivada"
-          TopLeft="731,1140" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Candidato\Ordenar 6"
-          TopLeft="495,793" />
         <NodeLayout
           Size="114,42"
           Id="Package\Candidato\Carrera"
           TopLeft="875,864" />
         <NodeLayout
-          Size="126,42"
-          Id="Package\Candidato\Ordenar 7 1"
-          TopLeft="832,980" />
+          Size="199,42"
+          Id="Package\Candidato\Combinación de mezcla 3"
+          TopLeft="706,1057" />
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de origen de OLE DB3]"
+          TopLeft="497.5,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.5,54"
+              Start="0,0"
+              End="-16.5,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="-4,27" />
+                  <mssgle:LineSegment
+                    End="-12.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.5,27"
+                    Point2="-16.5,27"
+                    Point3="-16.5,31" />
+                  <mssgle:LineSegment
+                    End="-16.5,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de origen de OLE DB2]"
+          TopLeft="843.5,682">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-36.1666666666666,101.333333333333"
+              Start="0,0"
+              End="-36.1666666666666,93.8333333333335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.6666666666667"
+                    Point2="0,50.6666666666667"
+                    Point3="-4,50.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-32.1666666666666,50.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.1666666666666,50.6666666666667"
+                    Point2="-36.1666666666666,50.6666666666667"
+                    Point3="-36.1666666666666,54.6666666666667" />
+                  <mssgle:LineSegment
+                    End="-36.1666666666666,93.8333333333335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de origen de OLE DB1]"
+          TopLeft="675.5,523.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47,66.833333333333"
+              Start="0,0"
+              End="-47,59.333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4166666666665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.4166666666665"
+                    Point2="0,33.4166666666665"
+                    Point3="-4,33.4166666666665" />
+                  <mssgle:LineSegment
+                    End="-43,33.4166666666665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43,33.4166666666665"
+                    Point2="-47,33.4166666666665"
+                    Point3="-47,37.4166666666665" />
+                  <mssgle:LineSegment
+                    End="-47,59.333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de origen de OLE DB]"
+          TopLeft="932,906">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-37,74"
+              Start="0,0"
+              End="-37,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="-4,37" />
+                  <mssgle:LineSegment
+                    End="-33,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-33,37"
+                    Point2="-37,37"
+                    Point3="-37,41" />
+                  <mssgle:LineSegment
+                    End="-37,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de origen de Excel]"
+          TopLeft="190.5,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.5,67"
+              Start="0,0"
+              End="30.5,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="26.5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.5,33.5"
+                    Point2="30.5,33.5"
+                    Point3="30.5,37.5" />
+                  <mssgle:LineSegment
+                    End="30.5,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de ordenación8]"
+          TopLeft="807.333333333333,825.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144,53.6666666666665"
+              Start="0,0"
+              End="-144,46.1666666666665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9431704885343" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.9431704885343"
+                    Point2="0,31.9431704885343"
+                    Point3="-4,31.9431704885343" />
+                  <mssgle:LineSegment
+                    End="-140,31.9431704885343" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140,31.9431704885343"
+                    Point2="-144,31.9431704885343"
+                    Point3="-144,35.9431704885343" />
+                  <mssgle:LineSegment
+                    End="-144,46.1666666666665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-80,36.9431704885343,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de ordenación7]"
+          TopLeft="558,835">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.6666666666666,44"
+              Start="0,0"
+              End="41.6666666666666,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1894317048854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1894317048854"
+                    Point2="0,26.1894317048854"
+                    Point3="4,26.1894317048854" />
+                  <mssgle:LineSegment
+                    End="37.6666666666666,26.1894317048854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.6666666666666,26.1894317048854"
+                    Point2="41.6666666666666,26.1894317048854"
+                    Point3="41.6666666666666,30.1894317048854" />
+                  <mssgle:LineSegment
+                    End="41.6666666666666,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.8333333333333,31.1894317048854,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de ordenación6]"
+          TopLeft="197,334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.6666666666667,142"
+              Start="0,0"
+              End="73.6666666666667,134.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.4885177453027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,80.4885177453027"
+                    Point2="0,84.4885177453027"
+                    Point3="4,84.4885177453027" />
+                  <mssgle:LineSegment
+                    End="69.6666666666667,84.4885177453027" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.6666666666667,84.4885177453027"
+                    Point2="73.6666666666667,84.4885177453027"
+                    Point3="73.6666666666667,88.4885177453027" />
+                  <mssgle:LineSegment
+                    End="73.6666666666667,134.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.8333333333334,89.4885177453027,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Candidato.Paths[Salida de ordenación5]"
           TopLeft="481,261">
@@ -41578,145 +41471,37 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Candidato.Paths[Salida de ordenación4]"
-          TopLeft="895,1022">
+          TopLeft="515.571428571429,424.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-57.6666666666666,35"
+              EndConnector="-184.238095238096,51.571428571429"
               Start="0,0"
-              End="-57.6666666666666,27.5">
+              End="-184.238095238096,44.071428571429">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.8325024925224" />
+                    End="0,26.6844616761112" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.8325024925224"
-                    Point2="0,20.8325024925224"
-                    Point3="-4,20.8325024925224" />
+                    Point1="0,26.6844616761112"
+                    Point2="0,30.6844616761112"
+                    Point3="-4,30.6844616761112" />
                   <mssgle:LineSegment
-                    End="-53.6666666666666,20.8325024925224" />
+                    End="-180.238095238096,30.6844616761112" />
                   <mssgle:CubicBezierSegment
-                    Point1="-53.6666666666666,20.8325024925224"
-                    Point2="-57.6666666666666,20.8325024925224"
-                    Point3="-57.6666666666666,24.8325024925224" />
+                    Point1="-180.238095238096,30.6844616761112"
+                    Point2="-184.238095238096,30.6844616761112"
+                    Point3="-184.238095238096,34.6844616761112" />
                   <mssgle:LineSegment
-                    End="-57.6666666666666,27.5" />
+                    End="-184.238095238096,44.071428571429" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-36.8333333333333,25.8325024925224,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación]"
-          TopLeft="681,1020">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.6666666666666,37"
-              Start="0,0"
-              End="92.6666666666666,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.0229312063809" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.0229312063809"
-                    Point2="0,22.0229312063809"
-                    Point3="4,22.0229312063809" />
-                  <mssgle:LineSegment
-                    End="88.6666666666666,22.0229312063809" />
-                  <mssgle:CubicBezierSegment
-                    Point1="88.6666666666666,22.0229312063809"
-                    Point2="92.6666666666666,22.0229312063809"
-                    Point3="92.6666666666666,26.0229312063809" />
-                  <mssgle:LineSegment
-                    End="92.6666666666666,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="38.3333333333333,27.0229312063809,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación1]"
-          TopLeft="628.5,632">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-125.166666666667,89.333333333333"
-              Start="0,0"
-              End="-125.166666666667,81.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.1724825523428" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.1724825523428"
-                    Point2="0,53.1724825523428"
-                    Point3="-4,53.1724825523428" />
-                  <mssgle:LineSegment
-                    End="-121.166666666667,53.1724825523428" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-121.166666666667,53.1724825523428"
-                    Point2="-125.166666666667,53.1724825523428"
-                    Point3="-125.166666666667,57.1724825523428" />
-                  <mssgle:LineSegment
-                    End="-125.166666666667,81.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-70.5833333333335,58.1724825523428,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación8]"
-          TopLeft="558,835">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41.6666666666666,44"
-              Start="0,0"
-              End="41.6666666666666,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.1894317048854" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.1894317048854"
-                    Point2="0,26.1894317048854"
-                    Point3="4,26.1894317048854" />
-                  <mssgle:LineSegment
-                    End="37.6666666666666,26.1894317048854" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.6666666666666,26.1894317048854"
-                    Point2="41.6666666666666,26.1894317048854"
-                    Point3="41.6666666666666,30.1894317048854" />
-                  <mssgle:LineSegment
-                    End="41.6666666666666,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="12.8333333333333,31.1894317048854,16,16"
+              BoundingBox="-100.119047619048,35.6844616761112,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -41758,38 +41543,144 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Candidato.Paths[Salida de ordenación2]"
-          TopLeft="807.333333333333,825.333333333333">
+          TopLeft="628.5,632">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-144,53.6666666666665"
+              EndConnector="-125.166666666667,89.333333333333"
               Start="0,0"
-              End="-144,46.1666666666665">
+              End="-125.166666666667,81.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.9431704885343" />
+                    End="0,49.1724825523428" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.9431704885343"
-                    Point2="0,31.9431704885343"
-                    Point3="-4,31.9431704885343" />
+                    Point1="0,49.1724825523428"
+                    Point2="0,53.1724825523428"
+                    Point3="-4,53.1724825523428" />
                   <mssgle:LineSegment
-                    End="-140,31.9431704885343" />
+                    End="-121.166666666667,53.1724825523428" />
                   <mssgle:CubicBezierSegment
-                    Point1="-140,31.9431704885343"
-                    Point2="-144,31.9431704885343"
-                    Point3="-144,35.9431704885343" />
+                    Point1="-121.166666666667,53.1724825523428"
+                    Point2="-125.166666666667,53.1724825523428"
+                    Point3="-125.166666666667,57.1724825523428" />
                   <mssgle:LineSegment
-                    End="-144,46.1666666666665" />
+                    End="-125.166666666667,81.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-80,36.9431704885343,16,16"
+              BoundingBox="-70.5833333333335,58.1724825523428,16,16"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de ordenación1]"
+          TopLeft="681,1020">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.6666666666666,37"
+              Start="0,0"
+              End="92.6666666666666,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0229312063809" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.0229312063809"
+                    Point2="0,22.0229312063809"
+                    Point3="4,22.0229312063809" />
+                  <mssgle:LineSegment
+                    End="88.6666666666666,22.0229312063809" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.6666666666666,22.0229312063809"
+                    Point2="92.6666666666666,22.0229312063809"
+                    Point3="92.6666666666666,26.0229312063809" />
+                  <mssgle:LineSegment
+                    End="92.6666666666666,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="38.3333333333333,27.0229312063809,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de ordenación]"
+          TopLeft="895,1022">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57.6666666666666,35"
+              Start="0,0"
+              End="-57.6666666666666,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8325024925224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.8325024925224"
+                    Point2="0,20.8325024925224"
+                    Point3="-4,20.8325024925224" />
+                  <mssgle:LineSegment
+                    End="-53.6666666666666,20.8325024925224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-53.6666666666666,20.8325024925224"
+                    Point2="-57.6666666666666,20.8325024925224"
+                    Point3="-57.6666666666666,24.8325024925224" />
+                  <mssgle:LineSegment
+                    End="-57.6666666666666,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-36.8333333333333,25.8325024925224,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de combinación de mezcla3]"
+          TopLeft="471.5,763.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.5,29.666666666667"
+              Start="0,0"
+              End="86.5,22.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.8333333333335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.8333333333335"
+                    Point2="0,14.8333333333335"
+                    Point3="4,14.8333333333335" />
+                  <mssgle:LineSegment
+                    End="82.5,14.8333333333335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.5,14.8333333333335"
+                    Point2="86.5,14.8333333333335"
+                    Point3="86.5,18.8333333333335" />
+                  <mssgle:LineSegment
+                    End="86.5,22.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41883,40 +41774,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de combinación de mezcla3]"
-          TopLeft="471.5,763.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86.5,29.666666666667"
-              Start="0,0"
-              End="86.5,22.166666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.8333333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.8333333333335"
-                    Point2="0,14.8333333333335"
-                    Point3="4,14.8333333333335" />
-                  <mssgle:LineSegment
-                    End="82.5,14.8333333333335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="82.5,14.8333333333335"
-                    Point2="86.5,14.8333333333335"
-                    Point3="86.5,18.8333333333335" />
-                  <mssgle:LineSegment
-                    End="86.5,22.166666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Candidato.Paths[Salida de columna derivada2]"
           TopLeft="515.535714285714,339.714285714286">
           <EdgeLayout.Curve>
@@ -41930,6 +41787,74 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,35.214285714285" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de columna derivada1]"
+          TopLeft="683,1297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104,34"
+              Start="0,0"
+              End="-96.5,34">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-48,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48,0"
+                    Point2="-52,0"
+                    Point3="-52,4" />
+                  <mssgle:LineSegment
+                    End="-52,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-52,30"
+                    Point2="-52,34"
+                    Point3="-56,34" />
+                  <mssgle:LineSegment
+                    End="-96.5,34" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Candidato.Paths[Salida de columna derivada]"
+          TopLeft="813,1182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43.5,94"
+              Start="0,0"
+              End="-43.5,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43"
+                    Point2="0,47"
+                    Point3="-4,47" />
+                  <mssgle:LineSegment
+                    End="-39.5,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.5,47"
+                    Point2="-43.5,47"
+                    Point3="-43.5,51" />
+                  <mssgle:LineSegment
+                    End="-43.5,86.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -41972,320 +41897,6 @@
             <mssgm:EdgeLabel
               BoundingBox="-29.54703125,46.5,35.0940625,9.7490234375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de OLE DB3]"
-          TopLeft="497.5,165">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16.5,54"
-              Start="0,0"
-              End="-16.5,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="-4,27" />
-                  <mssgle:LineSegment
-                    End="-12.5,27" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.5,27"
-                    Point2="-16.5,27"
-                    Point3="-16.5,31" />
-                  <mssgle:LineSegment
-                    End="-16.5,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de OLE DB]"
-          TopLeft="843.5,682">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-36.1666666666666,101.333333333333"
-              Start="0,0"
-              End="-36.1666666666666,93.8333333333335">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.6666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.6666666666667"
-                    Point2="0,50.6666666666667"
-                    Point3="-4,50.6666666666667" />
-                  <mssgle:LineSegment
-                    End="-32.1666666666666,50.6666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-32.1666666666666,50.6666666666667"
-                    Point2="-36.1666666666666,50.6666666666667"
-                    Point3="-36.1666666666666,54.6666666666667" />
-                  <mssgle:LineSegment
-                    End="-36.1666666666666,93.8333333333335" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de OLE DB2]"
-          TopLeft="675.5,523.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-47,66.833333333333"
-              Start="0,0"
-              End="-47,59.333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.4166666666665" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.4166666666665"
-                    Point2="0,33.4166666666665"
-                    Point3="-4,33.4166666666665" />
-                  <mssgle:LineSegment
-                    End="-43,33.4166666666665" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-43,33.4166666666665"
-                    Point2="-47,33.4166666666665"
-                    Point3="-47,37.4166666666665" />
-                  <mssgle:LineSegment
-                    End="-47,59.333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de OLE DB1]"
-          TopLeft="932,906">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-37,74"
-              Start="0,0"
-              End="-37,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="-4,37" />
-                  <mssgle:LineSegment
-                    End="-33,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-33,37"
-                    Point2="-37,37"
-                    Point3="-37,41" />
-                  <mssgle:LineSegment
-                    End="-37,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de Excel]"
-          TopLeft="190.5,100">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="30.5,67"
-              Start="0,0"
-              End="30.5,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
-                  <mssgle:LineSegment
-                    End="26.5,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.5,33.5"
-                    Point2="30.5,33.5"
-                    Point3="30.5,37.5" />
-                  <mssgle:LineSegment
-                    End="30.5,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación7]"
-          TopLeft="197,334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.6666666666667,142"
-              Start="0,0"
-              End="73.6666666666667,134.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,80.4885177453027" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,80.4885177453027"
-                    Point2="0,84.4885177453027"
-                    Point3="4,84.4885177453027" />
-                  <mssgle:LineSegment
-                    End="69.6666666666667,84.4885177453027" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.6666666666667,84.4885177453027"
-                    Point2="73.6666666666667,84.4885177453027"
-                    Point3="73.6666666666667,88.4885177453027" />
-                  <mssgle:LineSegment
-                    End="73.6666666666667,134.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="28.8333333333334,89.4885177453027,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación6]"
-          TopLeft="515.571428571429,424.428571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-184.238095238096,51.571428571429"
-              Start="0,0"
-              End="-184.238095238096,44.071428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.6844616761112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.6844616761112"
-                    Point2="0,30.6844616761112"
-                    Point3="-4,30.6844616761112" />
-                  <mssgle:LineSegment
-                    End="-180.238095238096,30.6844616761112" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-180.238095238096,30.6844616761112"
-                    Point2="-184.238095238096,30.6844616761112"
-                    Point3="-184.238095238096,34.6844616761112" />
-                  <mssgle:LineSegment
-                    End="-184.238095238096,44.071428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-100.119047619048,35.6844616761112,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Candidato\Columna derivada 2"
-          TopLeft="683,1276" />
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de columna derivada]"
-          TopLeft="813,1182">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-43.5,94"
-              Start="0,0"
-              End="-43.5,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43"
-                    Point2="0,47"
-                    Point3="-4,47" />
-                  <mssgle:LineSegment
-                    End="-39.5,47" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.5,47"
-                    Point2="-43.5,47"
-                    Point3="-43.5,51" />
-                  <mssgle:LineSegment
-                    End="-43.5,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de columna derivada1]"
-          TopLeft="683,1297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-104,34"
-              Start="0,0"
-              End="-96.5,34">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-48,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-48,0"
-                    Point2="-52,0"
-                    Point3="-52,4" />
-                  <mssgle:LineSegment
-                    End="-52,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-52,30"
-                    Point2="-52,34"
-                    Point3="-56,34" />
-                  <mssgle:LineSegment
-                    End="-96.5,34" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -45359,7 +44970,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45381,7 +44994,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45403,7 +45018,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45467,7 +45084,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45501,7 +45120,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45535,7 +45156,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45569,7 +45192,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45591,7 +45216,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45619,7 +45246,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45653,7 +45282,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45681,7 +45312,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -45827,7 +45460,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45861,7 +45496,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45895,7 +45532,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45929,7 +45568,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45963,7 +45604,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45997,7 +45640,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46025,7 +45670,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46053,7 +45700,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46087,7 +45736,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46121,7 +45772,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46143,7 +45796,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46300,7 +45955,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46334,7 +45991,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46368,7 +46027,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46402,7 +46063,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46436,7 +46099,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46470,7 +46135,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46498,7 +46165,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46520,7 +46189,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46554,7 +46225,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46588,7 +46261,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46610,7 +46285,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46767,7 +46444,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46801,7 +46480,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46823,7 +46504,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46881,7 +46564,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46915,7 +46600,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46949,7 +46636,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46983,7 +46672,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47017,7 +46708,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47123,7 +46816,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -47269,7 +46964,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47303,7 +47000,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47337,7 +47036,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47371,7 +47072,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47405,7 +47108,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47439,7 +47144,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47467,7 +47174,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47501,7 +47210,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47529,7 +47240,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47563,7 +47276,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47585,7 +47300,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47742,7 +47459,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47776,7 +47495,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47810,7 +47531,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47844,7 +47567,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47878,7 +47603,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47912,7 +47639,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47940,7 +47669,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47974,7 +47705,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48008,7 +47741,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48042,7 +47777,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48064,7 +47801,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48221,7 +47960,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48255,7 +47996,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48289,7 +48032,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48323,7 +48068,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48357,7 +48104,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48391,7 +48140,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48419,7 +48170,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48441,7 +48194,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48475,7 +48230,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48509,7 +48266,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48531,7 +48290,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48688,7 +48449,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48722,7 +48485,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48756,7 +48521,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48790,7 +48557,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48824,7 +48593,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48858,7 +48629,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48886,7 +48659,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48920,7 +48695,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48954,7 +48731,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48988,7 +48767,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49010,7 +48791,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49155,7 +48938,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49189,7 +48974,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49223,7 +49010,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49245,7 +49034,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49279,7 +49070,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49313,7 +49106,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49341,7 +49136,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49375,7 +49172,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49409,7 +49208,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49443,7 +49244,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49465,7 +49268,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49622,7 +49427,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49656,7 +49463,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49690,7 +49499,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49718,7 +49529,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49752,7 +49565,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49786,7 +49601,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49814,7 +49631,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49848,7 +49667,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49882,7 +49703,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49910,7 +49733,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -49932,7 +49757,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50141,7 +49968,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50175,7 +50004,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50209,7 +50040,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50243,7 +50076,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50277,7 +50112,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50299,7 +50136,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50321,7 +50160,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50355,25 +50196,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Status Admisiones\Destino de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Status Admisiones\Origen de OLE DB 1">
     <Properties>
@@ -50389,6 +50219,19 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Status Admisiones\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Status Admisiones\Destino de OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

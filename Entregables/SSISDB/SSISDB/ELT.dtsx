@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{682724A0-3DA8-4853-9A05-01904547325A}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{F104A384-0F52-4A20-9FF1-6C3C6C990003}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,20 +23,20 @@
       DTS:ObjectName="DESKTOP-I3AC1QB\MSSQLSERVER01.Admisiones_DWHProyecto">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-I3AC1QB\MSSQLSERVER01;Initial Catalog=Admisiones_DWHProyecto;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=DWHGrupo8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Borrar Dimensiones y Staging"
+      DTS:refId="Package\Borrar Dimensiones, Staging y Fact"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{468389F2-F46A-40DA-B776-E1491EEE5504}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Borrar Dimensiones y Staging"
+      DTS:ObjectName="Borrar Dimensiones, Staging y Fact"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -58,7 +58,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{ECEF6BE4-A43A-4F93-982C-1469E99E51BD}"
-          SQLTask:SqlStatementSource="EXEC USP_FillDimDate&#xA;INSERT INTO [Staging].[Candidato]&#xA; (         [Municipio]&#xA;           ,[ID_Candidato]&#xA;           ,[NombreCandidato]&#xA;           ,[ApellidoCandidato]&#xA;           ,[Genero]&#xA;           ,[FechaNacimiento]&#xA;           ,[Edad]&#xA;           ,[NombreColegio]&#xA;           ,[NombreDiversificado]&#xA;           ,[FechaInicioValidez]&#xA;           ,[FechaFinValidez]&#xA;           ,[FechaCreacion]&#xA;           ,[UsuarioCreacion]&#xA;           ,[FechaModificacion]&#xA;           ,[UsuarioModificacion]&#xA;           ,[ID_Batch]&#xA;           ,[ID_SourceSystem])&#xA;Select &#xA;&#x9;muni.Nombre,&#xA;&#x9;Can.ID_Candidato,&#xA;&#x9;CAN.Nombre as NombreCandidato,&#xA;&#x9;CAN.Apellido  as ApellidoCandidato,&#xA;&#x9;CAN.Genero as Genero,&#xA;&#x9;CAN.FechaNacimiento as FechaNacimiento,&#xA;&#x9;can.Edad as edad,&#xA;&#x9;COL.Nombre as NombreColegio,&#xA;&#x9;DIV.Nombre as NombreDiversificado,&#xA;&#x9;--Columnas SCD tipo 2 &#xA;&#x9;'2013-01-01' as FechaInicioValidez,&#xA;&#x9;null as FechaFinValidez,&#xA;&#x9;GETDATE() AS FechaCreacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;&#x9;GETDATE() AS FechaModificacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;&#x9;--Columnas linaje&#xA;&#x9;'1-ETL' as ID_Batch,&#xA;&#x9;'Admisiones' as ID_SourceSystem&#xA;FROM [AdmisionesProyecto].[dbo].[Candidato] CAN INNER JOIN&#x9;&#xA;&#x9; [AdmisionesProyecto].[dbo].[ColegioCandidato] COL ON (CAN.ID_Colegio = COL.ID_Colegio) INNER JOIN&#xA;&#x9; [AdmisionesProyecto].[dbo].[Diversificado] DIV ON (CAN.ID_Diversificado = DIV.ID_Diversificado) INNER JOIN&#xA;&#x9; [AdmisionesProyecto].[dbo].Municipio MUNI ON (CAN.ID_Municipio = muni.ID_Municipio)&#xA;GO&#xA;&#xA;INSERT INTO [Staging].[Carrera]&#xA;(           [ID_Carrera]&#xA;           ,[NombreCarrera]&#xA;           ,[NombreFacultad]&#xA;           ,[FechaInicioValidez]&#xA;           ,[FechaFinValidez]&#xA;           ,[FechaCreacion]&#xA;           ,[UsuarioCreacion]&#xA;           ,[FechaModificacion]&#xA;           ,[UsuarioModificacion]&#xA;           ,[ID_Batch]&#xA;           ,[ID_SourceSystem])&#xA;    Select &#xA;&#x9;car.ID_Carrera,&#xA;&#x9;car.Nombre,&#xA;&#x9;fac.Nombre,&#xA;&#x9;--Columnas SCD tipo 2 &#xA;&#x9;'2013-01-01' as FechaInicioValidez,&#xA;&#x9;null as FechaFinValidez,&#xA;&#x9;GETDATE() AS FechaCreacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;&#x9;GETDATE() AS FechaModificacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;&#x9;--Columnas linaje&#xA;&#x9;'1-ETL' as ID_Batch,&#xA;&#x9;'Admisiones' as ID_SourceSystem&#xA;FROM [AdmisionesProyecto].[dbo].Carrera car inner join &#xA;&#x9; [AdmisionesProyecto].dbo.Facultad fac on (car.ID_Facultad = fac.ID_Facultad)&#xA;Go&#xA;&#xA;INSERT INTO [Staging].[ColegioCandidato]&#xA;Select &#xA;&#x9;col.ID_Colegio,&#xA;&#x9;col.Nombre,&#xA;&#x9;--Columnas SCD tipo 2 &#xA;&#x9;'2013-01-01' as FechaInicioValidez,&#xA;&#x9;null as FechaFinValidez,&#xA;&#x9;GETDATE() AS FechaCreacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;&#x9;GETDATE() AS FechaModificacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;&#x9;--Columnas linaje&#xA;&#x9;'1-ETL' as ID_Batch,&#xA;&#x9;'Admisiones' as ID_SourceSystem&#xA;FROM [AdmisionesProyecto].[dbo].ColegioCandidato COL&#xA;Go&#xA;&#xA;INSERT INTO [Staging].Diversificado&#xA;Select &#xA;&#x9;div.ID_Diversificado,&#xA;&#x9;div.Nombre,&#xA;&#x9;--Columnas SCD tipo 2 &#xA;&#x9;'2013-01-01' as FechaInicioValidez,&#xA;&#x9;null as FechaFinValidez,&#xA;&#x9;GETDATE() AS FechaCreacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;&#x9;GETDATE() AS FechaModificacion,&#xA;&#x9;CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;&#x9;--Columnas linaje&#xA;&#x9;'1-ETL' as ID_Batch,&#xA;&#x9;'Admisiones' as ID_SourceSystem&#xA;FROM [AdmisionesProyecto].[dbo].Diversificado div&#xA;Go&#xA;&#xA;INSERT INTO [Staging].ExamenArea&#xA;Select &#xA;&#x9;EXA.ID_ExamenArea,&#xA;&#x9;Exa.NombreArea,&#xA;&#x9;EXA.Especial&#xA;FROM [AdmisionesProyecto].[dbo].ExamenArea EXA&#xA;&#xA;Go&#xA;INSERT INTO [Staging].[Geografia]&#xA;           ([ID_Municipio],&#xA;&#x9;&#x9;   [Municipio]&#xA;           ,[Departamento]&#xA;           ,[Pais])&#xA;Select &#xA;&#x9;MUNI.ID_Municipio,&#xA;&#x9;muni.Nombre,&#xA;&#x9;depa.Nombre,&#xA;&#x9;pais.Nombre&#xA;from [AdmisionesProyecto].[dbo].Municipio muni inner join&#xA;&#x9; [AdmisionesProyecto].[dbo].Departamento depa on (muni.ID_Departamento = depa.ID_Departamento) inner join&#xA;&#x9; [AdmisionesProyecto].[dbo].Pais pais on (depa.ID_Pais=pais.ID_Pais)&#xA;          &#xA;Go&#xA;&#xA;USE [Admisiones_DWHProyecto]&#xA;Go&#xA;DROP FUNCTION IF EXISTS [dbo].GetClasificacion;&#xA;GO&#xA;CREATE FUNCTION [dbo].GetClasificacion&#xA;(&#xA;&#x9;@aciertos as INT,&#xA;&#x9;@preguntas as INT&#xA;)&#xA;RETURNS INT&#xA;BEGIN&#xA;&#x9;DECLARE @answer INT;&#xA;&#x9;SET @answer = 1;&#xA;&#x9;DECLARE @clasificacion DECIMAL(8,2);&#xA;&#x9;SET @clasificacion = CAST(@aciertos AS DECIMAL(8,2))/CAST(@preguntas AS DECIMAL(8,2))*100;&#xA;&#x9;IF (@clasificacion &gt;= 70)&#xA;&#x9;BEGIN&#xA;&#x9;&#x9;SET @answer = 1&#xA;&#x9;END&#xA;&#x9;ELSE &#xA;&#x9;BEGIN&#xA;&#x9;&#x9;IF (@clasificacion &gt;= 55)&#xA;&#x9;&#x9;BEGIN&#xA;&#x9;&#x9;&#x9;SET @answer = 2&#xA;&#x9;&#x9;END&#xA;&#x9;&#x9;ELSE&#xA;&#x9;&#x9;BEGIN&#xA;&#x9;&#x9;&#x9;SET @answer = 3&#xA;&#x9;&#x9;END&#xA;&#x9;END&#xA;&#x9;RETURN (select SK_Clasificacion from [Admisiones_DWHProyecto].Dimension.Clasificacion WHERE ID_Clasificacion = @answer);&#xA;END;&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="    EXEC USP_FillDimDate&#xA;    INSERT INTO [Staging].[Candidato]&#xA;    (         [Municipio]&#xA;            ,[ID_Candidato]&#xA;            ,[NombreCandidato]&#xA;            ,[ApellidoCandidato]&#xA;            ,[Genero]&#xA;            ,[FechaNacimiento]&#xA;            ,[Edad]&#xA;            ,[NombreColegio]&#xA;            ,[NombreDiversificado]&#xA;            ,[FechaInicioValidez]&#xA;            ,[FechaFinValidez]&#xA;            ,[FechaCreacion]&#xA;            ,[UsuarioCreacion]&#xA;            ,[FechaModificacion]&#xA;            ,[UsuarioModificacion]&#xA;            ,[ID_Batch]&#xA;            ,[ID_SourceSystem])&#xA;    Select &#xA;        muni.Nombre,&#xA;        Can.ID_Candidato,&#xA;        CAN.Nombre as NombreCandidato,&#xA;        CAN.Apellido  as ApellidoCandidato,&#xA;        CAN.Genero as Genero,&#xA;        CAN.FechaNacimiento as FechaNacimiento,&#xA;        can.Edad as edad,&#xA;        COL.Nombre as NombreColegio,&#xA;        DIV.Nombre as NombreDiversificado,&#xA;        --Columnas SCD tipo 2 &#xA;        '2013-01-01' as FechaInicioValidez,&#xA;        null as FechaFinValidez,&#xA;        GETDATE() AS FechaCreacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;        GETDATE() AS FechaModificacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;        --Columnas linaje&#xA;        '1-ETL' as ID_Batch,&#xA;        'Admisiones' as ID_SourceSystem&#xA;    FROM [Grupo8].[dbo].[Candidato] CAN INNER JOIN&#x9;&#xA;        [Grupo8].[dbo].[ColegioCandidato] COL ON (CAN.ID_Colegio = COL.ID_Colegio) INNER JOIN&#xA;        [Grupo8].[dbo].[Diversificado] DIV ON (CAN.ID_Diversificado = DIV.ID_Diversificado) INNER JOIN&#xA;        [Grupo8].[dbo].Municipio MUNI ON (CAN.ID_Municipio = muni.ID_Municipio)&#xA;    GO&#xA;&#xA;    INSERT INTO [Staging].[Carrera]&#xA;    (           [ID_Carrera]&#xA;            ,[NombreCarrera]&#xA;            ,[NombreFacultad]&#xA;            ,[FechaInicioValidez]&#xA;            ,[FechaFinValidez]&#xA;            ,[FechaCreacion]&#xA;            ,[UsuarioCreacion]&#xA;            ,[FechaModificacion]&#xA;            ,[UsuarioModificacion]&#xA;            ,[ID_Batch]&#xA;            ,[ID_SourceSystem])&#xA;        Select &#xA;        car.ID_Carrera,&#xA;        car.Nombre,&#xA;        fac.Nombre,&#xA;        --Columnas SCD tipo 2 &#xA;        '2013-01-01' as FechaInicioValidez,&#xA;        null as FechaFinValidez,&#xA;        GETDATE() AS FechaCreacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;        GETDATE() AS FechaModificacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;        --Columnas linaje&#xA;        '1-ETL' as ID_Batch,&#xA;        'Admisiones' as ID_SourceSystem&#xA;    FROM [Grupo8].[dbo].Carrera car inner join &#xA;        [Grupo8].dbo.Facultad fac on (car.ID_Facultad = fac.ID_Facultad)&#xA;    Go&#xA;&#xA;    INSERT INTO [Staging].[ColegioCandidato]&#xA;    Select &#xA;        col.ID_Colegio,&#xA;        col.Nombre,&#xA;        --Columnas SCD tipo 2 &#xA;        '2013-01-01' as FechaInicioValidez,&#xA;        null as FechaFinValidez,&#xA;        GETDATE() AS FechaCreacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;        GETDATE() AS FechaModificacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;        --Columnas linaje&#xA;        '1-ETL' as ID_Batch,&#xA;        'Admisiones' as ID_SourceSystem&#xA;    FROM [Grupo8].[dbo].ColegioCandidato COL&#xA;    Go&#xA;&#xA;    INSERT INTO [Staging].Diversificado&#xA;    Select &#xA;        div.ID_Diversificado,&#xA;        div.Nombre,&#xA;        --Columnas SCD tipo 2 &#xA;        '2013-01-01' as FechaInicioValidez,&#xA;        null as FechaFinValidez,&#xA;        GETDATE() AS FechaCreacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioCreacion,&#xA;        GETDATE() AS FechaModificacion,&#xA;        CAST(SUSER_NAME() AS nvarchar(100)) AS UsuarioModificacion,&#xA;        --Columnas linaje&#xA;        '1-ETL' as ID_Batch,&#xA;        'Admisiones' as ID_SourceSystem&#xA;    FROM [Grupo8].[dbo].Diversificado div&#xA;    Go&#xA;&#xA;    INSERT INTO [Staging].ExamenArea&#xA;    Select &#xA;        EXA.ID_ExamenArea,&#xA;        Exa.NombreArea,&#xA;        EXA.Especial&#xA;    FROM [Grupo8].[dbo].ExamenArea EXA&#xA;&#xA;    Go&#xA;    INSERT INTO [Staging].[Geografia]&#xA;            ([ID_Municipio],&#xA;            [Municipio]&#xA;            ,[Departamento]&#xA;            ,[Pais])&#xA;    Select &#xA;        MUNI.ID_Municipio,&#xA;        muni.Nombre,&#xA;        depa.Nombre,&#xA;        pais.Nombre&#xA;    from [Grupo8].[dbo].Municipio muni inner join&#xA;        [Grupo8].[dbo].Departamento depa on (muni.ID_Departamento = depa.ID_Departamento) inner join&#xA;        [Grupo8].[dbo].Pais pais on (depa.ID_Pais=pais.ID_Pais)&#xA;            &#xA;    Go&#xA;&#xA;    Go&#xA;    DROP FUNCTION IF EXISTS [dbo].GetClasificacion;&#xA;    GO&#xA;    CREATE FUNCTION [dbo].GetClasificacion&#xA;    (&#xA;        @aciertos as INT,&#xA;        @preguntas as INT&#xA;    )&#xA;    RETURNS INT&#xA;    BEGIN&#xA;        DECLARE @answer INT;&#xA;        SET @answer = 1;&#xA;        DECLARE @clasificacion DECIMAL(8,2);&#xA;        SET @clasificacion = CAST(@aciertos AS DECIMAL(8,2))/CAST(@preguntas AS DECIMAL(8,2))*100;&#xA;        IF (@clasificacion &gt;= 70)&#xA;        BEGIN&#xA;            SET @answer = 1&#xA;        END&#xA;        ELSE &#xA;        BEGIN&#xA;            IF (@clasificacion &gt;= 55)&#xA;            BEGIN&#xA;                SET @answer = 2&#xA;            END&#xA;            ELSE&#xA;            BEGIN&#xA;                SET @answer = 3&#xA;            END&#xA;        END&#xA;        RETURN (select SK_Clasificacion from Dimension.Clasificacion WHERE ID_Clasificacion = @answer);&#xA;    END;&#xA;    go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -91,7 +91,7 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{ECEF6BE4-A43A-4F93-982C-1469E99E51BD}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="&#xA;INSERT INTO [Fact].[ResultadoAdmision]&#xA;           ([SK_Candidato]&#xA;           ,[SK_Carrera]&#xA;           ,[DateKey]&#xA;           ,[ID_Resultado]&#xA;           ,[ID_Descuento]&#xA;           ,[DescripcionDescuento]&#xA;           ,[PorcentajeDescuento]&#xA;           ,[Precio]&#xA;           ,[NotaTotal]&#xA;           ,[NotaArea]&#xA;           ,[NombreArea]&#xA;           ,[SK_ColegioCandidato]&#xA;           ,[SK_Geografia]&#xA;           ,[SK_Diversificado]&#xA;           ,[SK_ExamenArea],&#xA;&#x9;&#x9;    [SK_Clasificacion],&#xA;&#x9;&#x9;    [NotaVerbal], &#xA;&#x9;&#x9;&#x9;[NotaCuantitativa],&#xA;&#x9;&#x9;&#x9;[NotaMatematicaCalculo],&#xA;&#x9;&#x9;&#x9;[NotaFisica],&#xA;&#x9;&#x9;&#x9;[NotaQuimica],&#xA;&#x9;&#x9;&#x9;[NotaEspanol],&#xA;&#x9;&#x9;&#x9;[NotaMatematica],&#xA;&#x9;&#x9;&#x9;[NotaNaturales],&#xA;&#x9;&#x9;&#x9;[NotaSociales] )&#xA;Select&#xA;&#x9;can.SK_Candidato,&#xA;&#x9;Dcar.SK_Carrera,&#xA;&#x9;YEAR(ra.FechaPrueba)*10000 + MONTH(ra.FechaPrueba)*100 + DAY(ra.FechaPrueba),&#xA;&#x9;RA.ID_Resultado,&#xA;&#x9;null,--ra.ID_Descuento,&#xA;&#x9;null,--ade.Descripcion,&#xA;&#x9;null,--ade.PorcentajeDescuento,&#xA;&#x9;ra.Precio,&#xA;&#x9;CAST(ra.TotalAciertos AS DECIMAL(8,2))/CAST(ra.TotalPreguntas AS DECIMAL(8,2))*100,&#xA;&#x9;null,&#xA;&#x9;null,&#xA;&#x9;dcc.SK_ColegioCandidato,&#xA;&#x9;Dg.SK_Geografia, -- FALTA Geograf�a&#xA;&#x9;Dd.SK_Diversificado,&#xA;&#x9;null, -- EXAMEN AREA NO VA&#xA;&#x9;(SELECT [dbo].GetClasificacion(ra1.TotalAciertos, ra1.TotalPreguntas) as test FROM [AdmisionesProyecto].dbo.ResultadoAdmision ra1  WHERE ra1.ID_Resultado = ra.ID_Resultado),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'HABILIDADES VERBALES'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'HABILIDADES CUANTITATIVAS'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'MATEMÁTICA PARA EL CÁLCULO'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'FÍSICA'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'QUÍMICA'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'ESPAÑOL'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'MATEMÁTICAS'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'CIENCIAS NATURALES'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [AdmisionesProyecto].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'CIENCIAS SOCIALES')&#xA;From&#xA;&#x9;[AdmisionesProyecto].dbo.ResultadoAdmision RA inner join &#xA;&#x9;[Admisiones_DWHProyecto].Dimension.Candidato CAN on (ra.ID_Candidato = can.ID_Candidato) inner join &#xA;&#x9;[AdmisionesProyecto].dbo.Carrera CAR on (ra.ID_Carrera = car.ID_Carrera) inner join &#xA;&#x9;[Admisiones_DWHProyecto].Dimension.Carrera Dcar on (car.ID_Carrera =Dcar.ID_Carrera) inner join&#xA;&#x9;--[AdmisionesProyecto].dbo.DescuentoExamen ADE On (ra.ID_Descuento = ade.ID_Descuento) inner join&#xA;&#x9;[AdmisionesProyecto].dbo.Candidato Ac ON (ra.ID_Candidato = AC.ID_Candidato) INNER JOIN &#xA;&#x9;[AdmisionesProyecto].dbo.ColegioCandidato Acc ON (Ac.ID_Colegio = Acc.ID_Colegio) INNER JOIN &#xA;&#x9;[Admisiones_DWHProyecto].Dimension.ColegioCandidato dcc ON (dcc.ID_Colegio = Ac.ID_Colegio) INNER JOIN &#xA;&#x9;[AdmisionesProyecto].dbo.Diversificado Ad  ON (Ac.ID_Diversificado =  Ad.ID_Diversificado) INNER JOIN &#xA;&#x9;[Admisiones_DWHProyecto].Dimension.Diversificado Dd ON (Ad.ID_Diversificado = Dd.ID_Diversificado) INNER JOIN &#xA;&#x9;[AdmisionesProyecto].dbo.Municipio Am ON (Ac.ID_Municipio = Am.ID_Municipio) INNER JOIN &#xA;&#x9;[Admisiones_DWHProyecto].Dimension.Geografia Dg ON (Dg.ID_Municipio = Am.ID_Municipio)&#xA;&#x9;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="&#xA;INSERT INTO [Fact].[ResultadoAdmision]&#xA;           ([SK_Candidato]&#xA;           ,[SK_Carrera]&#xA;           ,[DateKey]&#xA;           ,[ID_Resultado]&#xA;           ,[ID_Descuento]&#xA;           ,[DescripcionDescuento]&#xA;           ,[PorcentajeDescuento]&#xA;           ,[Precio]&#xA;           ,[NotaTotal]&#xA;           ,[NotaArea]&#xA;           ,[NombreArea]&#xA;           ,[SK_ColegioCandidato]&#xA;           ,[SK_Geografia]&#xA;           ,[SK_Diversificado]&#xA;           ,[SK_ExamenArea],&#xA;&#x9;&#x9;    [SK_Clasificacion],&#xA;&#x9;&#x9;    [NotaVerbal], &#xA;&#x9;&#x9;&#x9;[NotaCuantitativa],&#xA;&#x9;&#x9;&#x9;[NotaMatematicaCalculo],&#xA;&#x9;&#x9;&#x9;[NotaFisica],&#xA;&#x9;&#x9;&#x9;[NotaQuimica],&#xA;&#x9;&#x9;&#x9;[NotaEspanol],&#xA;&#x9;&#x9;&#x9;[NotaMatematica],&#xA;&#x9;&#x9;&#x9;[NotaNaturales],&#xA;&#x9;&#x9;&#x9;[NotaSociales] )&#xA;Select&#xA;&#x9;can.SK_Candidato,&#xA;&#x9;Dcar.SK_Carrera,&#xA;&#x9;YEAR(ra.FechaPrueba)*10000 + MONTH(ra.FechaPrueba)*100 + DAY(ra.FechaPrueba),&#xA;&#x9;RA.ID_Resultado,&#xA;&#x9;null,--ra.ID_Descuento,&#xA;&#x9;null,--ade.Descripcion,&#xA;&#x9;null,--ade.PorcentajeDescuento,&#xA;&#x9;ra.Precio,&#xA;&#x9;CAST(ra.TotalAciertos AS DECIMAL(8,2))/CAST(ra.TotalPreguntas AS DECIMAL(8,2))*100,&#xA;&#x9;null,&#xA;&#x9;null,&#xA;&#x9;dcc.SK_ColegioCandidato,&#xA;&#x9;Dg.SK_Geografia, -- FALTA Geograf�a&#xA;&#x9;Dd.SK_Diversificado,&#xA;&#x9;null, -- EXAMEN AREA NO VA&#xA;&#x9;(SELECT [dbo].GetClasificacion(ra1.TotalAciertos, ra1.TotalPreguntas) as test FROM [Grupo8].dbo.ResultadoAdmision ra1  WHERE ra1.ID_Resultado = ra.ID_Resultado),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'HABILIDADES VERBALES'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'HABILIDADES CUANTITATIVAS'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'MATEMÁTICA PARA EL CÁLCULO'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'FÍSICA'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'QUÍMICA'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'ESPAÑOL'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'MATEMÁTICAS'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'CIENCIAS NATURALES'),&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT rad.NotaArea FROM [Grupo8].dbo.ExamenArea ea JOIN&#xA;&#x9;&#x9;[Grupo8].dbo.ResultadoAdmision_detalle rad ON (ea.ID_ExamenArea = rad.ID_ExamenArea)&#xA;&#x9;&#x9;WHERE rad.ID_Resultado = ra.ID_Resultado AND ea.NombreArea = 'CIENCIAS SOCIALES')&#xA;From&#xA;&#x9;[Grupo8].dbo.ResultadoAdmision RA inner join &#xA;&#x9;Dimension.Candidato CAN on (ra.ID_Candidato = can.ID_Candidato) inner join &#xA;&#x9;[Grupo8].dbo.Carrera CAR on (ra.ID_Carrera = car.ID_Carrera) inner join &#xA;&#x9;Dimension.Carrera Dcar on (car.ID_Carrera =Dcar.ID_Carrera) inner join&#xA;&#x9;--[Grupo8].dbo.DescuentoExamen ADE On (ra.ID_Descuento = ade.ID_Descuento) inner join&#xA;&#x9;[Grupo8].dbo.Candidato Ac ON (ra.ID_Candidato = AC.ID_Candidato) INNER JOIN &#xA;&#x9;[Grupo8].dbo.ColegioCandidato Acc ON (Ac.ID_Colegio = Acc.ID_Colegio) INNER JOIN &#xA;&#x9;Dimension.ColegioCandidato dcc ON (dcc.ID_Colegio = Ac.ID_Colegio) INNER JOIN &#xA;&#x9;[Grupo8].dbo.Diversificado Ad  ON (Ac.ID_Diversificado =  Ad.ID_Diversificado) INNER JOIN &#xA;&#x9;Dimension.Diversificado Dd ON (Ad.ID_Diversificado = Dd.ID_Diversificado) INNER JOIN &#xA;&#x9;[Grupo8].dbo.Municipio Am ON (Ac.ID_Municipio = Am.ID_Municipio) INNER JOIN &#xA;&#x9;Dimension.Geografia Dg ON (Dg.ID_Municipio = Am.ID_Municipio)&#xA;&#x9;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -20597,7 +20597,7 @@
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
       DTS:DTSID="{80721412-17D0-4A23-A8BB-8665BE1B7DF2}"
-      DTS:From="Package\Borrar Dimensiones y Staging"
+      DTS:From="Package\Borrar Dimensiones, Staging y Fact"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
       DTS:To="Package\INSERT A STAGING" />
@@ -20711,87 +20711,87 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="185.6,64"
-          Id="Package\Borrar Dimensiones y Staging"
+          Size="245,42"
+          Id="Package\Borrar Dimensiones, Staging y Fact"
           TopLeft="30.1428576561863,7.64705893077665" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\INSERT A STAGING"
           TopLeft="57.0000009707044,101.858824957944" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Insert clasificacion"
           TopLeft="859.714296625585,895.094125446069" />
         <NodeLayout
-          Size="128.8,41.6"
+          Size="130,42"
           Id="Package\Insert Fact"
           TopLeft="1125.71430044028,955.670598314378" />
         <NodeLayout
-          Size="145.6,41.6"
+          Size="146,42"
           Id="Package\Merge Carrera"
           TopLeft="289.42857635751,366.729415505485" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Merge Examen Area"
           TopLeft="960.448995948185,724.62185497515" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Merge Geografia"
           TopLeft="1140.71430514053,838.117658813107" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\Merge Staging Candidato DIM"
           TopLeft="8.42857157210844,242.564709284232" />
         <NodeLayout
-          Size="206.4,41.6"
+          Size="206,42"
           Id="Package\Merge Staging DIM Colegio"
           TopLeft="434.795925499399,498.959670863267" />
         <NodeLayout
-          Size="232,41.6"
+          Size="232,42"
           Id="Package\Merge Staging DIM Diversificado"
           TopLeft="665.510215415204,660.285720692964" />
         <NodeLayout
-          Size="160,41.6"
+          Size="160,42"
           Id="Package\SCD CANDIDATO"
           TopLeft="39.2857149547463,170.988237692163" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\SCD CARRERA"
           TopLeft="283.000004819461,300.376474800902" />
         <NodeLayout
-          Size="136,41.6"
+          Size="136,42"
           Id="Package\SCD Colegio"
           TopLeft="454.000007731574,438.68235839791" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\SCD Diversificado"
           TopLeft="690.857154622369,581.260509548716" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="122.942857656186,71.6470589307767">
+          TopLeft="152.642857656186,49.6470589307767">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.6571433145181,30.2117660271673"
+              EndConnector="-10.1428566854819,52.2117660271673"
               Start="0,0"
-              End="19.6571433145181,22.7117660271673">
+              End="-10.1428566854819,44.7117660271673">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.1058830135837" />
+                    End="0,22.1058830135837" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.1058830135837"
-                    Point2="0,15.1058830135837"
-                    Point3="4,15.1058830135837" />
+                    Point1="0,22.1058830135837"
+                    Point2="0,26.1058830135837"
+                    Point3="-4,26.1058830135837" />
                   <mssgle:LineSegment
-                    End="15.6571433145181,15.1058830135837" />
+                    End="-6.14285668548189,26.1058830135837" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.6571433145181,15.1058830135837"
-                    Point2="19.6571433145181,15.1058830135837"
-                    Point3="19.6571433145181,19.1058830135837" />
+                    Point1="-6.14285668548189,26.1058830135837"
+                    Point2="-10.1428566854819,26.1058830135837"
+                    Point3="-10.1428566854819,30.1058830135837" />
                   <mssgle:LineSegment
-                    End="19.6571433145181,22.7117660271673" />
+                    End="-10.1428566854819,44.7117660271673" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20904,30 +20904,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 12]"
-          TopLeft="1024.51429662558,921.494125446069">
+          TopLeft="1024.71429662559,921.760792112736">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101.200003814695,54.9764728683093"
+              EndConnector="101.000003814695,54.9098062016424"
               Start="0,0"
-              End="93.700003814695,54.9764728683093">
+              End="93.500003814695,54.9098062016424">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="38.7288904995379,0" />
+                    End="38.6238548208805,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="38.7288904995379,0"
-                    Point2="42.7288904995379,0"
-                    Point3="42.7288904995379,4" />
+                    Point1="38.6238548208805,0"
+                    Point2="42.6238548208805,0"
+                    Point3="42.6238548208805,4" />
                   <mssgle:LineSegment
-                    End="42.7288904995379,50.9764728683093" />
+                    End="42.6238548208805,50.9098062016424" />
                   <mssgle:CubicBezierSegment
-                    Point1="42.7288904995379,50.9764728683093"
-                    Point2="42.7288904995379,54.9764728683093"
-                    Point3="46.7288904995379,54.9764728683093" />
+                    Point1="42.6238548208805,50.9098062016424"
+                    Point2="42.6238548208805,54.9098062016424"
+                    Point3="46.6238548208805,54.9098062016424" />
                   <mssgle:LineSegment
-                    End="93.700003814695,54.9764728683093" />
+                    End="93.500003814695,54.9098062016424" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21486,17 +21486,17 @@
           Id="Package\Merge Examen Area\Sort"
           TopLeft="127.2,190.4" />
         <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Merge Examen Area\Sort 1"
-          TopLeft="525.6,159.2" />
+          Size="158.4,41.6"
+          Id="Package\Merge Examen Area\OLE DB Source 1"
+          TopLeft="507.2,71.2" />
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Merge Examen Area\OLE DB Source"
           TopLeft="120,68.8" />
         <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\Merge Examen Area\OLE DB Source 1"
-          TopLeft="507.2,71.2" />
+          Size="106.4,41.6"
+          Id="Package\Merge Examen Area\Sort 1"
+          TopLeft="525.6,159.2" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Merge Examen Area\OLE DB Destination"
@@ -21505,40 +21505,6 @@
           Size="154.4,41.6"
           Id="Package\Merge Examen Area\Conditional Split"
           TopLeft="331.2,363.2" />
-        <EdgeLayout
-          Id="Package\Merge Examen Area.Paths[Sort Output1]"
-          TopLeft="176,232">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="206.133333333333,36"
-              Start="0,0"
-              End="206.133333333333,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.3365853658537" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.3365853658537"
-                    Point2="0,21.3365853658537"
-                    Point3="4,21.3365853658537" />
-                  <mssgle:LineSegment
-                    End="202.133333333333,21.3365853658537" />
-                  <mssgle:CubicBezierSegment
-                    Point1="202.133333333333,21.3365853658537"
-                    Point2="206.133333333333,21.3365853658537"
-                    Point3="206.133333333333,25.3365853658537" />
-                  <mssgle:LineSegment
-                    End="206.133333333333,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge Examen Area.Paths[Sort Output]"
           TopLeft="578.8,200.8">
@@ -21570,7 +21536,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21628,7 +21596,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21662,7 +21632,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21684,7 +21656,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Examen Area.Paths[Sort Output1]"
+          TopLeft="176,232">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206.133333333333,36"
+              Start="0,0"
+              End="206.133333333333,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3365853658537" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3365853658537"
+                    Point2="0,21.3365853658537"
+                    Point3="4,21.3365853658537" />
+                  <mssgle:LineSegment
+                    End="202.133333333333,21.3365853658537" />
+                  <mssgle:CubicBezierSegment
+                    Point1="202.133333333333,21.3365853658537"
+                    Point2="206.133333333333,21.3365853658537"
+                    Point3="206.133333333333,25.3365853658537" />
+                  <mssgle:LineSegment
+                    End="206.133333333333,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -22642,7 +22652,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22676,7 +22688,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22722,7 +22736,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22744,7 +22760,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22766,7 +22784,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -22883,7 +22903,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23013,7 +23035,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23035,7 +23059,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23093,7 +23119,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23115,7 +23143,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -24196,7 +24226,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24218,7 +24250,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24252,7 +24286,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24382,7 +24418,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24404,7 +24442,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

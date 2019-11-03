@@ -2,18 +2,28 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSISDB</Name>
-    <LastWriteTime>2019-11-03T05:59:20.5543884Z</LastWriteTime>
+    <LastWriteTime>2019-11-03T18:10:33.5927828Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL.dtsx</Name>
-      <LastWriteTime>2019-11-03T05:53:27.7862872Z</LastWriteTime>
+      <LastWriteTime>2019-11-03T17:48:55.09564Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ELT.dtsx</Name>
-      <LastWriteTime>2019-11-03T05:59:20.5204254Z</LastWriteTime>
+      <LastWriteTime>2019-11-03T18:33:43.2708243Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>EstructuraDWH.dtsx</Name>
+      <LastWriteTime>2019-11-03T17:37:51.6497271Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>EstructuraRelacional.dtsx</Name>
+      <LastWriteTime>2019-11-03T17:43:21.6241918Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
