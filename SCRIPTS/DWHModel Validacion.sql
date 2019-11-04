@@ -1,63 +1,66 @@
 
-/****** Object:  Schema [Dimension]    Script Date: 2/11/2019 23:12:02 ******/
-CREATE SCHEMA [Dimension]
-Go
-/****** Object:  Schema [Fact]    Script Date: 2/11/2019 23:12:02 ******/
-CREATE SCHEMA [Fact]
+if not exists ( SELECT  * FROM    sys.schemas  WHERE   name = N'Dimension')
+ EXEC('CREATE SCHEMA [Dimension]');
 GO
-/****** Object:  Schema [Staging]    Script Date: 2/11/2019 23:12:02 ******/
-CREATE SCHEMA [Staging]
+
+
+if not exists ( SELECT  * FROM    sys.schemas  WHERE   name = N'Fact')
+ EXEC('CREATE SCHEMA [Fact]');
+GO
+
+if not exists ( SELECT  * FROM    sys.schemas  WHERE   name = N'Staging')
+ EXEC('CREATE SCHEMA [Staging]');
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_DateTime]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('dbo.UDT_DateTime') IS NOT NULL)
+IF (type_id('dbo.UDT_DateTime') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_DateTime] FROM [datetime] NULL
 END
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_Decimal5.2]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_Decimal5.2') IS Not NULL)
+IF (type_id('[dbo].[UDT_Decimal5.2]') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_Decimal5.2] FROM [decimal](5, 2) NULL
 END
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_Decimal6.2]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_Decimal6.2') IS Not NULL)
+IF (type_id('[dbo].[UDT_Decimal6.2]') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_Decimal6.2] FROM [decimal](6, 2) NULL
 END 
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_PK]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_SK') IS Not NULL)
+IF (type_id('[dbo].[UDT_SK]') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_SK] FROM [int] NULL
 END
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_SK]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_SK') IS Not NULL)
+IF (type_id('[dbo].[UDT_PK]') IS  NULL)
 BEGIN
-CREATE TYPE [dbo].[UDT_SK] FROM [int] NULL
+CREATE TYPE [dbo].[UDT_PK] FROM [int] NULL
 END
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_UnCaracter]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_UnCaracter') IS Not NULL)
+IF (type_id('[dbo].[UDT_UnCaracter]') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_UnCaracter] FROM [char](1) NULL
 END
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_VarcharCorto]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_VarcharCorto') IS Not NULL)
+IF (type_id('[dbo].[UDT_VarcharCorto]') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_VarcharCorto] FROM [varchar](100) NULL
 END
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_VarcharLargo]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_VarcharLargo') IS Not NULL)
+IF (type_id('[dbo].[UDT_VarcharLargo]') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_VarcharLargo] FROM [varchar](600) NULL
 END
 GO
 /****** Object:  UserDefinedDataType [dbo].[UDT_VarcharMediano]    Script Date: 2/11/2019 23:12:02 ******/
-IF (OBJECT_ID('UDT_VarcharMediano') IS NOT NULL)
+IF (type_id('[dbo].[UDT_VarcharMediano]') IS  NULL)
 BEGIN
 CREATE TYPE [dbo].[UDT_VarcharMediano] FROM [varchar](300) NULL
 END
@@ -68,7 +71,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
+DROP FUNCTION IF EXISTS dbo.GetClasificacion
+GO
 CREATE FUNCTION [dbo].[GetClasificacion]
 (
 	@aciertos as INT,
@@ -105,7 +109,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.Candidato')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.Candidato') )
 BEGIN
 CREATE TABLE [Dimension].[Candidato](
 	[SK_Candidato] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -134,13 +138,15 @@ PRIMARY KEY CLUSTERED
 END
 GO
 
+
+
 /****** Object:  Table [Dimension].[Carrera]    Script Date: 2/11/2019 23:12:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.Carrera')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.Carrera') )
 BEGIN
 CREATE TABLE [Dimension].[Carrera](
 	[SK_Carrera] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -169,7 +175,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.Clasificacion')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.Clasificacion') )
 BEGIN
 CREATE TABLE [Dimension].[Clasificacion](
 	[SK_Clasificacion] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -187,7 +193,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.ColegioCandidato')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.ColegioCandidato') )
 BEGIN
 CREATE TABLE [Dimension].[ColegioCandidato](
 	[SK_ColegioCandidato] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -213,7 +219,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.Diversificado')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.Diversificado') )
 BEGIN
 CREATE TABLE [Dimension].[Diversificado](
 	[SK_Diversificado] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -239,7 +245,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.ExamenArea')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.ExamenArea') )
 BEGIN
 CREATE TABLE [Dimension].[ExamenArea](
 	[SK_ExamenArea] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -259,7 +265,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.Fecha')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.Fecha') )
 BEGIN 
 CREATE TABLE [Dimension].[Fecha](
 	[DateKey] [int] NOT NULL,
@@ -296,7 +302,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Dimension.Geografia')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Dimension.Geografia') )
 BEGIN
 CREATE TABLE [Dimension].[Geografia](
 	[SK_Geografia] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -316,7 +322,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Fact.ResultadoAdmision')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Fact.ResultadoAdmision') )
 BEGIN
 CREATE TABLE [Fact].[ResultadoAdmision](
 	[SK_Resultado] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -357,7 +363,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Staging.Candidato')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Staging.Candidato') )
 BEGIN 
 CREATE TABLE [Staging].[Candidato](
 	[Municipio] [dbo].[UDT_VarcharMediano] NULL,
@@ -391,7 +397,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Staging.Carrera')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Staging.Carrera') )
 BEGIN
 CREATE TABLE [Staging].[Carrera](
 	[SK_Carrera] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -419,7 +425,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Staging.Clasificacion')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Staging.Clasificacion') )
 BEGIN 
 CREATE TABLE [Staging].[Clasificacion](
 	[SK_Clasificacion] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -437,7 +443,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Staging.ColegioCandidato')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Staging.ColegioCandidato') )
 BEGIN 
 CREATE TABLE [Staging].[ColegioCandidato](
 	[SK_ColegioCandidato] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -464,7 +470,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Staging.Diversificado')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Staging.Diversificado') )
 BEGIN
 CREATE TABLE [Staging].[Diversificado](
 	[SK_Diversificado] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -490,7 +496,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Staging.ExamenArea')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Staging.ExamenArea') )
 BEGIN
 CREATE TABLE [Staging].[ExamenArea](
 	[SK_ExamenArea] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -510,7 +516,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'Staging.Geografia')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'Staging.Geografia') )
 BEGIN
 CREATE TABLE [Staging].[Geografia](
 	[SK_Geografia] [dbo].[UDT_SK] IDENTITY(1,1) NOT NULL,
@@ -526,6 +532,7 @@ PRIMARY KEY CLUSTERED
 END
 GO
 ----ALTER TABLE 
+
 ALTER TABLE [Fact].[ResultadoAdmision]  WITH CHECK ADD FOREIGN KEY([DateKey])
 REFERENCES [Dimension].[Fecha] ([DateKey])
 GO
@@ -535,32 +542,27 @@ GO
 ALTER TABLE [Fact].[ResultadoAdmision]  WITH CHECK ADD FOREIGN KEY([SK_Carrera])
 REFERENCES [Dimension].[Carrera] ([SK_Carrera])
 GO
-ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD  CONSTRAINT [FK_ResultadoAdmision_Clasificacion] FOREIGN KEY([SK_Clasificacion])
+ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD  FOREIGN KEY([SK_Clasificacion])
 REFERENCES [Dimension].[Clasificacion] ([SK_Clasificacion])
 GO
-ALTER TABLE [Fact].[ResultadoAdmision] CHECK CONSTRAINT [FK_ResultadoAdmision_Clasificacion]
-GO
-ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD  CONSTRAINT [FK_ResultadoAdmision_Colegio] FOREIGN KEY([SK_ColegioCandidato])
+ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD  FOREIGN KEY([SK_ColegioCandidato])
 REFERENCES [Dimension].[ColegioCandidato] ([SK_ColegioCandidato])
 GO
-ALTER TABLE [Fact].[ResultadoAdmision] CHECK CONSTRAINT [FK_ResultadoAdmision_Colegio]
-GO
-ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD  CONSTRAINT [FK_ResultadoAdmision_Diversificado] FOREIGN KEY([SK_Diversificado])
+ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD  FOREIGN KEY([SK_Diversificado])
 REFERENCES [Dimension].[Diversificado] ([SK_Diversificado])
 GO
-ALTER TABLE [Fact].[ResultadoAdmision] CHECK CONSTRAINT [FK_ResultadoAdmision_Diversificado]
-GO
-ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD  CONSTRAINT [FK_ResultadoAdmision_Geografia] FOREIGN KEY([SK_Geografia])
+ALTER TABLE [Fact].[ResultadoAdmision]  WITH NOCHECK ADD FOREIGN KEY([SK_Geografia])
 REFERENCES [Dimension].[Geografia] ([SK_Geografia])
 GO
-ALTER TABLE [Fact].[ResultadoAdmision] CHECK CONSTRAINT [FK_ResultadoAdmision_Geografia]
-GO
+
 /****** Object:  StoredProcedure [dbo].[USP_FillDimDate]    Script Date: 2/11/2019 23:12:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+DROP PROCEDURE IF EXISTS dbo.USP_FillDimDate
+GO
 
 CREATE PROCEDURE [dbo].[USP_FillDimDate]
 @CurrentDate DATE = '2016-01-01', 
@@ -646,16 +648,16 @@ AS
                                             END     ;
                 SET @CurrentDate = DATEADD(DD, 1, @CurrentDate);
             END;
-    END;
+    END
 
 --SELECT * FROM Dimension.Fecha;
-END
-GO
 
 
-EXEC sys.sp_addextendedproperty @name=N'Desnormalizacion', @value=N'La dimension candidato provee una vista desnormalizada de las tablas origen Candidato, Diversificado y Colegio, dejando todo en una única dimensión para un modelo estrella' , @level0type=N'SCHEMA',@level0name=N'Dimension', @level1type=N'TABLE',@level1name=N'Candidato'
-GO
-EXEC sys.sp_addextendedproperty @name=N'Desnormalizacion', @value=N'La dimension carrera provee una vista desnormalizada de las tablas origen Facultad y Carrera en una sola dimensión para un modelo estrella' , @level0type=N'SCHEMA',@level0name=N'Dimension', @level1type=N'TABLE',@level1name=N'Carrera'
-GO
-EXEC sys.sp_addextendedproperty @name=N'Desnormalizacion', @value=N'La dimension fecha es generada de forma automatica y no tiene datos origen, se puede regenerar enviando un rango de fechas al stored procedure USP_FillDimDate' , @level0type=N'SCHEMA',@level0name=N'Dimension', @level1type=N'TABLE',@level1name=N'Fecha'
-GO
+
+
+--EXEC sys.sp_addextendedproperty @name=N'Desnormalizacion', @value=N'La dimension candidato provee una vista desnormalizada de las tablas origen Candidato, Diversificado y Colegio, dejando todo en una ï¿½nica dimensiï¿½n para un modelo estrella' , @level0type=N'SCHEMA',@level0name=N'Dimension', @level1type=N'TABLE',@level1name=N'Candidato'
+--GO
+--EXEC sys.sp_addextendedproperty @name=N'Desnormalizacion', @value=N'La dimension carrera provee una vista desnormalizada de las tablas origen Facultad y Carrera en una sola dimensiï¿½n para un modelo estrella' , @level0type=N'SCHEMA',@level0name=N'Dimension', @level1type=N'TABLE',@level1name=N'Carrera'
+--GO
+--EXEC sys.sp_addextendedproperty @name=N'Desnormalizacion', @value=N'La dimension fecha es generada de forma automatica y no tiene datos origen, se puede regenerar enviando un rango de fechas al stored procedure USP_FillDimDate' , @level0type=N'SCHEMA',@level0name=N'Dimension', @level1type=N'TABLE',@level1name=N'Fecha'
+--GO
