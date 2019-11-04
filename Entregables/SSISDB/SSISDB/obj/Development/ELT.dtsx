@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{F104A384-0F52-4A20-9FF1-6C3C6C990003}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{DB824743-18FC-4A37-881B-2EF672DDDF34}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="DESKTOP-I3AC1QB\MSSQLSERVER01.Admisiones_DWHProyecto">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=DWHGrupo8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-I3AC1QB\MSSQLSERVER01;Initial Catalog=Grupo8_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -20711,59 +20711,59 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="245,42"
+          Size="244.8,41.6"
           Id="Package\Borrar Dimensiones, Staging y Fact"
           TopLeft="30.1428576561863,7.64705893077665" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\INSERT A STAGING"
           TopLeft="57.0000009707044,101.858824957944" />
         <NodeLayout
-          Size="165,42"
+          Size="164.8,41.6"
           Id="Package\Insert clasificacion"
           TopLeft="859.714296625585,895.094125446069" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Insert Fact"
           TopLeft="1125.71430044028,955.670598314378" />
         <NodeLayout
-          Size="146,42"
+          Size="145.6,41.6"
           Id="Package\Merge Carrera"
           TopLeft="289.42857635751,366.729415505485" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Merge Examen Area"
           TopLeft="960.448995948185,724.62185497515" />
         <NodeLayout
-          Size="156,42"
+          Size="156,41.6"
           Id="Package\Merge Geografia"
           TopLeft="1140.71430514053,838.117658813107" />
         <NodeLayout
-          Size="219,42"
+          Size="219.2,41.6"
           Id="Package\Merge Staging Candidato DIM"
           TopLeft="8.42857157210844,242.564709284232" />
         <NodeLayout
-          Size="206,42"
+          Size="206.4,41.6"
           Id="Package\Merge Staging DIM Colegio"
           TopLeft="434.795925499399,498.959670863267" />
         <NodeLayout
-          Size="232,42"
+          Size="232,41.6"
           Id="Package\Merge Staging DIM Diversificado"
           TopLeft="665.510215415204,660.285720692964" />
         <NodeLayout
-          Size="160,42"
+          Size="160,41.6"
           Id="Package\SCD CANDIDATO"
           TopLeft="39.2857149547463,170.988237692163" />
         <NodeLayout
-          Size="142,42"
+          Size="142.4,41.6"
           Id="Package\SCD CARRERA"
           TopLeft="283.000004819461,300.376474800902" />
         <NodeLayout
-          Size="136,42"
+          Size="136,41.6"
           Id="Package\SCD Colegio"
           TopLeft="454.000007731574,438.68235839791" />
         <NodeLayout
-          Size="161,42"
+          Size="160.8,41.6"
           Id="Package\SCD Diversificado"
           TopLeft="690.857154622369,581.260509548716" />
         <EdgeLayout

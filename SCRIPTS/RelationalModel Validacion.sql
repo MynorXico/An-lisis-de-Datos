@@ -1,5 +1,6 @@
 
 /****** Object:  UserDefinedFunction [dbo].[GetClasificacion]    Script Date: 2/11/2019 23:05:27 ******/
+
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -44,7 +45,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Candidato')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Candidato') )
 BEGIN
 CREATE TABLE [dbo].[Candidato](
 	[ID_Candidato] [int] NOT NULL,
@@ -70,7 +71,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Carrera')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Carrera') )
 BEGIN
 CREATE TABLE [dbo].[Carrera](
 	[ID_Carrera] [int] IDENTITY(1,1) NOT NULL,
@@ -88,7 +89,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.ColegioCandidato')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.ColegioCandidato') )
 BEGIN
 CREATE TABLE [dbo].[ColegioCandidato](
 	[ID_Colegio] [int] IDENTITY(1,1) NOT NULL,
@@ -105,7 +106,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Departamento')
+
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Departamento') )
 BEGIN
 CREATE TABLE [dbo].[Departamento](
 	[ID_Departamento] [int] IDENTITY(1,1) NOT NULL,
@@ -123,7 +125,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.DescuentoExamen')
+
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.DescuentoExamen') )
 BEGIN
 CREATE TABLE [dbo].[DescuentoExamen](
 	[ID_Descuento] [int] IDENTITY(1,1) NOT NULL,
@@ -142,7 +145,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Diversificado')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Diversificado') )
 BEGIN
 CREATE TABLE [dbo].[Diversificado](
 	[ID_Diversificado] [int] IDENTITY(1,1) NOT NULL,
@@ -159,7 +162,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.ExamenArea')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.ExamenArea') )
 BEGIN
 CREATE TABLE [dbo].[ExamenArea](
 	[ID_ExamenArea] [int] IDENTITY(1,1) NOT NULL,
@@ -177,7 +180,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Facultad')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Facultad') )
 BEGIN
 CREATE TABLE [dbo].[Facultad](
 	[ID_Facultad] [int] IDENTITY(1,1) NOT NULL,
@@ -195,7 +198,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Municipio')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Municipio') )
 BEGIN
 CREATE TABLE [dbo].[Municipio](
 	[ID_Municipio] [int] IDENTITY(1,1) NOT NULL,
@@ -214,7 +217,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Pais')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Pais') )
 BEGIN
 CREATE TABLE [dbo].[Pais](
 	[ID_Pais] [int] IDENTITY(1,1) NOT NULL,
@@ -232,7 +235,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.ResultadoAdmision')
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.ResultadoAdmision') )
 BEGIN
 CREATE TABLE [dbo].[ResultadoAdmision](
 	[ID_Resultado] [int] IDENTITY(1,1) NOT NULL,
@@ -256,7 +259,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.ResultadoAdmision_detalle')
+
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.ResultadoAdmision_detalle') )
 BEGIN
 CREATE TABLE [dbo].[ResultadoAdmision_detalle](
 	[ID_ResultadoDetalle] [int] IDENTITY(1,1) NOT NULL,
@@ -275,7 +279,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.Status')
+
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.Status') )
 BEGIN
 CREATE TABLE [dbo].[Status](
 	[ID_Status] [int] IDENTITY(1,1) NOT NULL,
@@ -292,7 +297,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-if EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME = 'dbo.StatusAdmision')
+
+if NOT EXISTS (SELECT * FROM sys.objects WHERE object_id=OBJECT_ID(N'dbo.StatusAdmision') )
 BEGIN
 CREATE TABLE [dbo].[StatusAdmision](
 	[ID_ResultadoAdmision] [int] NULL,
@@ -302,58 +308,50 @@ END
 GO
 
 --xx
-ALTER TABLE [dbo].[Candidato]  WITH CHECK ADD 
-FOREIGN KEY([ID_Carrera])
+ALTER TABLE [dbo].[Candidato] WITH NOCHECK ADD  FOREIGN KEY ([ID_Carrera])
 REFERENCES [dbo].[Carrera] ([ID_Carrera])
 GO
 
-ALTER TABLE [dbo].[Candidato]  WITH CHECK ADD   FOREIGN KEY([ID_Diversificado])
+ALTER TABLE [dbo].[Candidato]  WITH NOCHECK ADD  FOREIGN KEY([ID_Diversificado])
 REFERENCES [dbo].[Diversificado] ([ID_Diversificado])
 GO
 
-ALTER TABLE [dbo].[Candidato]  WITH CHECK ADD  FOREIGN KEY([ID_Carrera])
+ALTER TABLE [dbo].[Candidato]  WITH NOCHECK ADD  FOREIGN KEY([ID_Carrera])
 REFERENCES [dbo].[Carrera] ([ID_Carrera])
 GO
 
-ALTER TABLE [dbo].[Candidato] CHECK CONSTRAINT [FK_Candidato_Carrera]
-GO
 
-ALTER TABLE [dbo].[Carrera]  WITH CHECK ADD FOREIGN KEY([ID_Facultad])
+ALTER TABLE [dbo].[Carrera]  WITH NOCHECK ADD  FOREIGN KEY([ID_Facultad])
 REFERENCES [dbo].[Facultad] ([ID_Facultad])
 GO
 
-ALTER TABLE [dbo].[Departamento]  WITH CHECK ADD  
-FOREIGN KEY([ID_Pais])
+ALTER TABLE [dbo].[Departamento]  WITH NOCHECK ADD  FOREIGN KEY([ID_Pais])
 REFERENCES [dbo].[Pais] ([ID_Pais])
 GO
 
-ALTER TABLE [dbo].[Departamento] CHECK CONSTRAINT [FK__Departame__ID_Pa__60A75C0F]
-GO
 
-ALTER TABLE [dbo].[Municipio]  WITH CHECK ADD  
-FOREIGN KEY([ID_Departamento])
+ALTER TABLE [dbo].[Municipio]  WITH NOCHECK ADD  FOREIGN KEY([ID_Departamento])
 REFERENCES [dbo].[Departamento] ([ID_Departamento])
 GO
 
 
-ALTER TABLE [dbo].[ResultadoAdmision]  WITH CHECK ADD 
-FOREIGN KEY([ID_Candidato])
+ALTER TABLE [dbo].[ResultadoAdmision] WITH NOCHECK ADD  FOREIGN KEY([ID_Candidato])
 REFERENCES [dbo].[Candidato] ([ID_Candidato])
 GO
 
 
-ALTER TABLE [dbo].[ResultadoAdmision]  WITH CHECK ADD FOREIGN KEY([ID_Carrera])
+ALTER TABLE [dbo].[ResultadoAdmision]  WITH NOCHECK ADD  FOREIGN KEY([ID_Carrera])
 REFERENCES [dbo].[Carrera] ([ID_Carrera])
 GO
 
-ALTER TABLE [dbo].[ResultadoAdmision]  WITH CHECK ADD FOREIGN KEY([ID_Descuento])
+ALTER TABLE [dbo].[ResultadoAdmision] WITH NOCHECK ADD  FOREIGN KEY([ID_Descuento])
 REFERENCES [dbo].[DescuentoExamen] ([ID_Descuento])
 GO
 
-ALTER TABLE [dbo].[ResultadoAdmision_detalle]  WITH CHECK ADD   FOREIGN KEY([ID_ExamenArea])
+ALTER TABLE [dbo].[ResultadoAdmision_detalle] WITH NOCHECK ADD  FOREIGN KEY([ID_ExamenArea])
 REFERENCES [dbo].[ExamenArea] ([ID_ExamenArea])
 GO
 
-ALTER TABLE [dbo].[ResultadoAdmision_detalle]  WITH CHECK ADD FOREIGN KEY([ID_Resultado])
+ALTER TABLE [dbo].[ResultadoAdmision_detalle]  WITH NOCHECK ADD  FOREIGN KEY([ID_Resultado])
 REFERENCES [dbo].[ResultadoAdmision] ([ID_Resultado])
 GO
