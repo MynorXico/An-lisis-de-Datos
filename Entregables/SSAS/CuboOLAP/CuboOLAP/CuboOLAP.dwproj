@@ -8,12 +8,12 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>Admisiones DWH Proyecto.cube</Name>
-      <FullPath>Admisiones DWH Proyecto.cube</FullPath>
+      <Name>GRUPO8 DWH.cube</Name>
+      <FullPath>GRUPO8 DWH.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>Admisiones DWH Proyecto.partitions</Name>
-          <FullPath>Admisiones DWH Proyecto.partitions</FullPath>
+          <Name>GRUPO8 DWH.partitions</Name>
+          <FullPath>GRUPO8 DWH.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
@@ -28,6 +28,10 @@
       <FullPath>Clasificacion.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Carrera.dim</Name>
+      <FullPath>Carrera.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Geografia.dim</Name>
       <FullPath>Geografia.dim</FullPath>
     </ProjectItem>
@@ -36,16 +40,12 @@
       <FullPath>Fecha.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Carrera.dim</Name>
-      <FullPath>Carrera.dim</FullPath>
+      <Name>Candidato.dim</Name>
+      <FullPath>Candidato.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Colegio Candidato.dim</Name>
       <FullPath>Colegio Candidato.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Candidato.dim</Name>
-      <FullPath>Candidato.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Diversificado.dim</Name>
@@ -58,14 +58,14 @@
   </Dimensions>
   <DataSources>
     <ProjectItem>
-      <Name>Admisiones DWH Proyecto.ds</Name>
-      <FullPath>Admisiones DWH Proyecto.ds</FullPath>
+      <Name>GRUPO8 DWH.ds</Name>
+      <FullPath>GRUPO8 DWH.ds</FullPath>
     </ProjectItem>
   </DataSources>
   <DataSourceViews>
     <ProjectItem>
-      <Name>Admisiones DWH Proyecto.dsv</Name>
-      <FullPath>Admisiones DWH Proyecto.dsv</FullPath>
+      <Name>GRUPO8 DWH.dsv</Name>
+      <FullPath>GRUPO8 DWH.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>
@@ -74,15 +74,15 @@
       <Options>
         <ConnectionMappings>
           <ConfigurationSetting>
-            <Id>Admisiones DWH Proyecto</Id>
-            <Name>Admisiones DWH Proyecto</Name>
-            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=40.117.179.53;Integrated Security=SSPI;Initial Catalog=GRUPO8_DWH</Value>
+            <Id>GRUPO8 DWH</Id>
+            <Name>GRUPO8 DWH</Name>
+            <Value xsi:type="xsd:string">Provider=SQLOLEDB.1;Data Source=40.117.179.53;Integrated Security=SSPI;Initial Catalog=GRUPO8_DWH</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
-            <Id>Admisiones DWH Proyecto</Id>
-            <Name>Admisiones DWH Proyecto</Name>
+            <Id>GRUPO8 DWH</Id>
+            <Name>GRUPO8 DWH</Name>
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>

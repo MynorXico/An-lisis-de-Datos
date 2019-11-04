@@ -4,11 +4,12 @@
       <Name>Development</Name>
       <Options>
         <TargetServer>40.117.179.53</TargetServer>
-        <TargetDatabase>CuboOLAP</TargetDatabase>
+        <TargetDatabase>Grupo8</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
           <ObjectType>Current</ObjectType>
         </StartObject>
+        <DeploymentMode>DeployAll</DeploymentMode>
       </Options>
     </Configuration>
   </Configurations>

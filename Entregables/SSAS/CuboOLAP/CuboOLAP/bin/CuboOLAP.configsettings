@@ -2,12 +2,12 @@
   <Database>
     <DataSources>
       <DataSource>
-        <ID>Admisiones DWH Proyecto</ID>
-        <ConnectionString>Provider=SQLNCLI11.1;Data Source=40.117.179.53;Integrated Security=SSPI;Initial Catalog=GRUPO8_DWH</ConnectionString>
+        <ID>GRUPO8 DWH</ID>
+        <ConnectionString>Provider=SQLOLEDB.1;Data Source=40.117.179.53;Integrated Security=SSPI;Initial Catalog=GRUPO8_DWH</ConnectionString>
         <ImpersonationInfo>
           <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
           <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Grupo8</Account>
-          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
         </ImpersonationInfo>
       </DataSource>
     </DataSources>
@@ -19,19 +19,19 @@
         <ID>Clasificacion</ID>
       </Dimension>
       <Dimension>
+        <ID>Carrera</ID>
+      </Dimension>
+      <Dimension>
         <ID>Geografia</ID>
       </Dimension>
       <Dimension>
         <ID>Fecha</ID>
       </Dimension>
       <Dimension>
-        <ID>Carrera</ID>
+        <ID>Candidato</ID>
       </Dimension>
       <Dimension>
         <ID>Colegio Candidato</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Candidato</ID>
       </Dimension>
       <Dimension>
         <ID>Diversificado</ID>
@@ -42,7 +42,7 @@
     </Dimensions>
     <Cubes>
       <Cube>
-        <ID>Admisiones DWH Proyecto</ID>
+        <ID>GRUPO8 DWH</ID>
         <MeasureGroups>
           <MeasureGroup>
             <ID>Examen Area</ID>

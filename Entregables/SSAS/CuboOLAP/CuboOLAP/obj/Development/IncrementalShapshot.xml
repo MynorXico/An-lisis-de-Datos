@@ -1,8 +1,8 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
-    <Database>CuboOLAP</Database>
-    <Server>localhost</Server>
-    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+    <Database>Grupo8</Database>
+    <Server>40.117.179.53</Server>
+    <ConnectionString>Data Source=40.117.179.53;Timeout=0</ConnectionString>
   </Target>
   <Options>
     <TransactionalDeployment>false</TransactionalDeployment>
@@ -19,86 +19,86 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>eQhz+64IXC5VX2WwVKat3ag7vO4=2/11/2019 17:26:242/11/2019 16:07:47</TimeStamp>
+        <TimeStamp>k/d9hx5edCch5h+V2UHI1EEwY6U=3/11/2019 11:15:433/11/2019 11:09:55</TimeStamp>
         <ID>
-          <String>Admisiones DWH Proyecto</String>
+          <String>GRUPO8 DWH</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>kLmiZAzM85chevZCO52+C//kpMY=2/11/2019 17:26:502/11/2019 17:26:50</TimeStamp>
+        <TimeStamp>LMV1OSPqqR780dTuOhprP8saiTQ=3/11/2019 11:10:583/11/2019 11:10:54</TimeStamp>
         <ID>
-          <String>Admisiones DWH Proyecto</String>
+          <String>GRUPO8 DWH</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>BlIMiem1ZkhJokAlaBYkFnJlPAY=2/11/2019 19:58:052/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>wKafiX2P4/8W4xnIherqMRvz1y8=3/11/2019 11:11:243/11/2019 11:11:24</TimeStamp>
         <ID>
           <String>Examen Area</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>2fd0W7VvQB/NHQyeyc6q5Al7P8I=2/11/2019 19:58:132/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>0ZlGRRnJKwbzt2+/8B9sp23FJ/U=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
         <ID>
           <String>Clasificacion</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>/iEAV5k9QQandYIS+pz968d5Ksk=2/11/2019 19:59:282/11/2019 19:57:11</TimeStamp>
-        <ID>
-          <String>Geografia</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>xdN6+7NoLh/iKwxPso/KixE0TWE=2/11/2019 20:01:112/11/2019 19:57:11</TimeStamp>
-        <ID>
-          <String>Fecha</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>91M2xPMomR7nDEWHgN13i7gERTc=2/11/2019 20:01:122/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>5R8reF+inll8cLUPZRC3oiFhR60=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
         <ID>
           <String>Carrera</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>BhI7PnrZ72ht8H1z8GELPG5Sk+k=2/11/2019 20:01:122/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>Yj1fSmey7gaf/j8mMHgOEPUoBAA=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
         <ID>
-          <String>Colegio Candidato</String>
+          <String>Geografia</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>leG0Qiqd3dQ2IZ54b6hITfBV6tg=2/11/2019 19:57:552/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>noVO8Q3kcGRPVL1Tg3cLP1dsncM=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <ID>
+          <String>Fecha</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IbVtk3Sm/yqpJQMGs42BueL76jQ=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
         <ID>
           <String>Candidato</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>EZgSH6AEuVm4xYmEBf/Mn/eMS3E=2/11/2019 19:57:112/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>YNX1JWC0O1shamsK3ySk14Spg/I=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <ID>
+          <String>Colegio Candidato</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>zhoFWbwgrlMejw2FJIaQ4c+F+m8=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
         <ID>
           <String>Diversificado</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>H9Degc0w0DNxqxv/JOt8CFFmqiM=2/11/2019 19:57:112/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>qzEtbjNMyrHHDgqWsdBw5B1pjTI=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
         <ID>
           <String>Resultado Admision</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>nVYc8VTV7kpm0OAQtxKQECT8fOc=2/11/2019 20:01:112/11/2019 19:57:10Qu5Td8dbtGdX7QVSaYREjvaMX/0=2/11/2019 19:57:112/11/2019 19:57:11</TimeStamp>
+        <TimeStamp>xRaLKMO0EJqKFEOsmz2LbOQdeb8=3/11/2019 11:11:253/11/2019 11:11:242s/NOvGhih6n6ZqLDvpQT7xg5hc=3/11/2019 11:11:243/11/2019 11:11:24</TimeStamp>
         <ID>
-          <String>Admisiones DWH Proyecto</String>
+          <String>GRUPO8 DWH</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
@@ -106,12 +106,12 @@
       <Type>Microsoft.AnalysisServices.Database</Type>
       <TimeStamp>+6X2yEoZ58vTM3u1Sdv/zoGlvHQ=27/10/2019 23:00:5927/10/2019 23:00:59</TimeStamp>
       <ID>
-        <String>CuboOLAP</String>
+        <String>Grupo8</String>
       </ID>
     </DatabaseSnapshot>
     <Granularity>Coarse</Granularity>
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2019-11-03T06:17:25.47Z</LastDeployed>
+  <LastDeployed>2019-11-03T17:17:02.32Z</LastDeployed>
 </DeploymentSnapshot>
