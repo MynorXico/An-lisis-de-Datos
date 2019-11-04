@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="EstructuraDWH"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{E7B342D0-D39B-4DD7-BFAF-DE145D3B73C3}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{150BA5A1-B37A-4D1F-95C8-96D9922F4F66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="DESKTOP-I3AC1QB\MSSQLSERVER01.Admisiones_DWHProyecto">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=Admisiones_DWHProyecto;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-I3AC1QB\MSSQLSERVER01;Initial Catalog=Grupo8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -33,7 +33,7 @@
       DTS:ObjectName="DESKTOP-LLLJTOF.DWHGrupo8">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=DWHGrupo8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-I3AC1QB\MSSQLSERVER01;Initial Catalog=Grupo8_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
