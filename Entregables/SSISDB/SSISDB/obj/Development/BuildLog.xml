@@ -2,32 +2,28 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSISDB</Name>
-    <LastWriteTime>2019-11-04T05:26:10.9245037Z</LastWriteTime>
+    <LastWriteTime>2019-11-04T05:51:01.3438739Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ETL.dtsx</Name>
-<<<<<<< Updated upstream
-      <LastWriteTime>2019-11-04T05:24:30.011134Z</LastWriteTime>
-=======
-      <LastWriteTime>2019-11-03T23:33:54.8270463Z</LastWriteTime>
->>>>>>> Stashed changes
+      <LastWriteTime>2019-11-04T05:51:01.3912517Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ELT.dtsx</Name>
-      <LastWriteTime>2019-11-04T05:26:10.8088228Z</LastWriteTime>
+      <LastWriteTime>2019-11-04T05:51:01.3358893Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>EstructuraDWH.dtsx</Name>
-      <LastWriteTime>2019-11-04T05:24:30.0540192Z</LastWriteTime>
+      <LastWriteTime>2019-11-04T05:51:01.3019787Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>EstructuraRelacional.dtsx</Name>
-      <LastWriteTime>2019-11-04T05:24:28.3784978Z</LastWriteTime>
+      <LastWriteTime>2019-11-04T05:51:01.3119525Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

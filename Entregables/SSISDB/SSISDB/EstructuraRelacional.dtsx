@@ -11,8 +11,8 @@
   DTS:LocaleID="4106"
   DTS:ObjectName="EstructuraRelacional"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{6198CC90-9E98-44BF-B5ED-46327E8FA7A4}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{209B021F-3046-427A-834B-D18FB464AEE0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="DESKTOP-LLLJTOF.Grupo8">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-I3AC1QB\MSSQLSERVER01;Initial Catalog=Grupo8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=40.117.179.53;Initial Catalog=GRUPO8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
