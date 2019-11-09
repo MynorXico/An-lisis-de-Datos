@@ -1,0 +1,223 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="65c9aa1f-a50f-4888-9b78-d257b4c848ef" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Resultado Admision</ID>
+  <Name>Resultado Admision</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="4ea98264-aef8-415e-9af5-7775e9574c09">
+    <DataSourceViewID>GRUPO8 DWH</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="74916e17-2e68-49c4-99d3-960a70ab878f">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="ba827865-dd32-41e3-8f16-2fe85c89faed">
+      <ID>SK Resultado</ID>
+      <Name>SK Resultado</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="47fb2285-f3ac-41c3-bd77-6a48c6b97a81">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41724e31-0780-4c0f-878b-5eea3da423f1">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>SK_Resultado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="768ba4df-3374-4b9b-987e-87e7bc4429c4">
+          <AttributeID>SK Clasificacion</AttributeID>
+          <Name>SK Clasificacion</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dd783e02-01fe-4f95-8e51-4fb822be13c6">
+          <AttributeID>SK Carrera</AttributeID>
+          <Name>SK Carrera</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="977716af-f04e-4b61-904c-83c40e49c46b">
+          <AttributeID>SK Geografia</AttributeID>
+          <Name>SK Geografia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1aa32166-ade8-41aa-9860-aa2ba1ad2965">
+          <AttributeID>Date Key</AttributeID>
+          <Name>Date Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1a034c20-212e-4504-a5c7-29b3c8612409">
+          <AttributeID>SK Candidato</AttributeID>
+          <Name>SK Candidato</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6d13b58c-a930-48bb-9737-95da83377ecd">
+          <AttributeID>SK Colegio Candidato</AttributeID>
+          <Name>SK Colegio Candidato</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="63a55ba8-822f-4761-adef-48fca3725c4b">
+          <AttributeID>SK Diversificado</AttributeID>
+          <Name>SK Diversificado</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b9d6ba4c-7c10-49e4-96c0-7e731e3c887a">
+      <ID>SK Clasificacion</ID>
+      <Name>SK Clasificacion</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="727296ce-4478-4af8-b63b-005a0b21c85d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c9f5b269-9bf0-4385-b7e0-509c9057b75e">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>SK_Clasificacion</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f7091584-9795-4950-a1f0-69153e2d0f2b">
+      <ID>SK Carrera</ID>
+      <Name>SK Carrera</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b0b88c54-9460-4cb2-ad0e-550fdd9bf00a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="34256752-40f3-4330-8d17-3c50992844e9">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>SK_Carrera</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1dca6240-76d3-430b-8f6f-32eeb0f5155a">
+      <ID>SK Geografia</ID>
+      <Name>SK Geografia</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="81a0bfa2-babe-470e-8090-c4ccbf6bef54">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b858e4cf-b9cb-471e-b189-df863f1b4715">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>SK_Geografia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bfba349a-107d-486b-b54c-aa28d8c83931">
+      <ID>Date Key</ID>
+      <Name>Date Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4b11f39c-64c7-4f4a-8244-b205a3afb5f9">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1616dd88-8989-42ed-bfbf-3544a2317f56">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>DateKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b49736bc-78dd-48f6-ae79-33a0c811c68a">
+      <ID>SK Candidato</ID>
+      <Name>SK Candidato</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8fbb050b-dd1f-48cd-8ab0-2f90dda001f2">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="64cfd0df-99d4-4962-96b9-b6bb2823aa60">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>SK_Candidato</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="270f9af8-7bb7-4eb3-b778-de16a1897dd5">
+      <ID>SK Colegio Candidato</ID>
+      <Name>SK Colegio Candidato</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1fc2ef39-75db-4d77-8f0b-225957b40f62">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ab5003c0-7171-4ee4-b7d6-a8cf2195dbae">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>SK_ColegioCandidato</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f5b14438-89ad-4461-8bcb-f383f4c93cc8">
+      <ID>SK Diversificado</ID>
+      <Name>SK Diversificado</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="34990bdf-8dbb-4a93-bf3c-919ad4d01651">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="398bc212-ac45-4053-bebf-083a5300784f">
+            <TableID>Fact_ResultadoAdmision</TableID>
+            <ColumnID>SK_Diversificado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

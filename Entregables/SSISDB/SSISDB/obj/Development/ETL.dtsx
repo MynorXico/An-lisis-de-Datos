@@ -11,8 +11,8 @@
   DTS:LocaleID="4106"
   DTS:ObjectName="ETL"
   DTS:PackageType="5"
-  DTS:VersionBuild="183"
-  DTS:VersionGUID="{58B80677-1A5A-4CDE-BBD8-A50F17FE7A62}">
+  DTS:VersionBuild="190"
+  DTS:VersionGUID="{98EDE6C8-870C-4A21-BFD1-FE1C67EAEE34}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="EXCEL"
       DTS:DTSID="{56935B7B-BC5F-4FE7-8FD9-FC6CD4C2A471}"
       DTS:ObjectName="Administrador de conexiones con Excel">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+@[$Package::FileNameResultados]+";Extended Properties=\"EXCEL 12.0 XML;HDR=YES\""</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\temp\GRUPO8\Reporte de porcentaje de aciertos.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
@@ -31,6 +33,8 @@
       DTS:CreationName="EXCEL"
       DTS:DTSID="{0883DF11-9E91-4FB7-B989-C24E951BF4AE}"
       DTS:ObjectName="Administrador de conexiones con Excel 1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+@[$Package::PathStatus]+";Extended Properties=\"EXCEL 12.0 XML;HDR=YES\";"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\temp\GRUPO8\Status Candidatos B.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
@@ -43,10 +47,37 @@
       DTS:ObjectName="DESKTOP-LLLJTOF.AdmisionesProyecto">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=40.117.179.53;Initial Catalog=GRUPO8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=40.117.179.53;User ID=Grupo8;Initial Catalog=GRUPO8;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAx+XTUT73rEKGkllZoP0erAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA16nZwt2N2dYehHLPoADfYvElj3+wQ8fP2VDvZFwtgOAAAAAAOgAAAAAIAACAAAACzkP91xh923WNHMbNnSKPksMdG+/VUOIiNx7zP0rRWAiAAAABFXueY942eQryKkjWH3lAkcZXHDHcR3GjnafKTB3cPrUAAAABZ/TEWLHx3j53ekEA0a5X20oRp2uCEPuRBccahBP8Hr/pu1WVHf9DNOkzlfgox+6EnxaeP9uGrflkOwppXxJHI</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:Description="Filename for Resultados"
+      DTS:DTSID="{9F10D34C-E165-4E67-B7F0-B6D77359A686}"
+      DTS:ObjectName="FileNameResultados">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\temp\GRUPO8\Reporte de porcentaje de aciertos.xlsx</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:Description="Filepath for "
+      DTS:DTSID="{364A0F44-9801-419F-A471-1D8E0178F3F1}"
+      DTS:ObjectName="PathStatus">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\temp\GRUPO8\Status Candidatos B.xlsx</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -4648,49 +4679,49 @@
               startId="Package\Candidato\Combinación de mezcla 1.Outputs[Salida de combinación de mezcla]" />
             <path
               refId="Package\Candidato.Paths[Salida de ordenación8]"
-              endId="Package\Candidato\Combinación de mezcla 3.Inputs[Entrada izquierda de combinación de mezcla]"
+              endId="Package\Candidato\Combinación de mezcla 2.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 7.Outputs[Salida de ordenación]" />
+              startId="Package\Candidato\Ordenar 6.Outputs[Salida de ordenación]" />
             <path
               refId="Package\Candidato.Paths[Salida de ordenación7]"
-              endId="Package\Candidato\Combinación de mezcla 1.Inputs[Entrada derecha de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación6]"
-              endId="Package\Candidato\Combinación de mezcla 2.Inputs[Entrada derecha de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 5.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación5]"
-              endId="Package\Candidato\Columna derivada 1.Inputs[Entrada de columna derivada]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 1.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación2]"
-              endId="Package\Candidato\Combinación de mezcla 3.Inputs[Entrada derecha de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 7 1.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación3]"
-              endId="Package\Candidato\Combinación de mezcla 1.Inputs[Entrada izquierda de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 4.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación1]"
-              endId="Package\Candidato\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 3.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de ordenación]"
               endId="Package\Candidato\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\Candidato\Ordenar 2.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\Candidato.Paths[Salida de ordenación4]"
-              endId="Package\Candidato\Combinación de mezcla 2.Inputs[Entrada izquierda de combinación de mezcla]"
+              refId="Package\Candidato.Paths[Salida de ordenación6]"
+              endId="Package\Candidato\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
-              startId="Package\Candidato\Ordenar 6.Outputs[Salida de ordenación]" />
+              startId="Package\Candidato\Ordenar 3.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación5]"
+              endId="Package\Candidato\Combinación de mezcla 1.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar 4.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación2]"
+              endId="Package\Candidato\Combinación de mezcla 2.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar 5.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación3]"
+              endId="Package\Candidato\Columna derivada 1.Inputs[Entrada de columna derivada]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar 1.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación1]"
+              endId="Package\Candidato\Combinación de mezcla 1.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación]"
+              endId="Package\Candidato\Combinación de mezcla 3.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar 7.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de ordenación4]"
+              endId="Package\Candidato\Combinación de mezcla 3.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Candidato\Ordenar 7 1.Outputs[Salida de ordenación]" />
             <path
               refId="Package\Candidato.Paths[Salida de origen de Excel]"
               endId="Package\Candidato\División Nombre Candidato.Inputs[Entrada de división condicional]"
@@ -4698,19 +4729,19 @@
               startId="Package\Candidato\Origen de Excel.Outputs[Salida de origen de Excel]" />
             <path
               refId="Package\Candidato.Paths[Salida de origen de OLE DB2]"
+              endId="Package\Candidato\Ordenar 7 1.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Candidato\Carrera.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Candidato.Paths[Salida de origen de OLE DB]"
               endId="Package\Candidato\Ordenar.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\Candidato\Diversificado.Outputs[Salida de origen de OLE DB]" />
             <path
-              refId="Package\Candidato.Paths[Salida de origen de OLE DB]"
+              refId="Package\Candidato.Paths[Salida de origen de OLE DB1]"
               endId="Package\Candidato\Ordenar 5.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\Candidato\Municipio.Outputs[Salida de origen de OLE DB]" />
-            <path
-              refId="Package\Candidato.Paths[Salida de origen de OLE DB1]"
-              endId="Package\Candidato\Ordenar 7 1.Inputs[Entrada de ordenación]"
-              name="Salida de origen de OLE DB"
-              startId="Package\Candidato\Carrera.Outputs[Salida de origen de OLE DB]" />
             <path
               refId="Package\Candidato.Paths[Salida de origen de OLE DB3]"
               endId="Package\Candidato\Ordenar 1.Inputs[Entrada de ordenación]"
@@ -40486,91 +40517,91 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126,42"
           Id="Package\Candidato"
           TopLeft="317,646" />
         <NodeLayout
-          Size="119.2,41.6"
+          Size="119,42"
           Id="Package\Carreras"
           TopLeft="331,535" />
         <NodeLayout
-          Size="252.8,41.6"
+          Size="253,42"
           Id="Package\Clears Pais-Departamento-Municipios"
           TopLeft="255,22" />
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Colegio"
           TopLeft="334,307" />
         <NodeLayout
-          Size="145.6,41.6"
+          Size="146,42"
           Id="Package\Departamento"
           TopLeft="312,160" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\Diversificado"
           TopLeft="323,382" />
         <NodeLayout
-          Size="204.8,41.6"
+          Size="205,42"
           Id="Package\INSERT INTO ExamenArea"
           TopLeft="275,733" />
         <NodeLayout
-          Size="185.6,41.6"
+          Size="186,42"
           Id="Package\INSERT INTO Facultad"
           TopLeft="289,466" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\INSERT STATUS"
           TopLeft="323,1549" />
         <NodeLayout
-          Size="128,41.6"
+          Size="128,42"
           Id="Package\Municipios"
           TopLeft="327,226" />
         <NodeLayout
-          Size="97.6,41.6"
+          Size="98,42"
           Id="Package\Pais"
           TopLeft="332,93" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Resultados Admisión"
           TopLeft="294,819" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\Resultados Ciencias Naturales"
           TopLeft="288,1031" />
         <NodeLayout
-          Size="212,41.6"
+          Size="212,42"
           Id="Package\Resultados Ciencias Sociales"
           TopLeft="278,1101" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\Resultados Español"
           TopLeft="304,890" />
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\Resultados Física"
           TopLeft="313,1261" />
         <NodeLayout
-          Size="251.2,41.6"
+          Size="251,42"
           Id="Package\Resultados Habilidades Cuantitativas"
           TopLeft="293,1475" />
         <NodeLayout
-          Size="231.2,41.6"
+          Size="231,42"
           Id="Package\Resultados Habilidades Verbales"
           TopLeft="304,1411" />
         <NodeLayout
-          Size="260,41.6"
+          Size="260,42"
           Id="Package\Resultados Matemática Para el Cálculo"
           TopLeft="259,1187" />
         <NodeLayout
-          Size="192,41.6"
+          Size="192,42"
           Id="Package\Resultados Matemáticas"
           TopLeft="292,955" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Resultados Química"
           TopLeft="306,1338" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Status Admisiones"
           TopLeft="316,1617" />
         <EdgeLayout
@@ -41268,7 +41299,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de OLE DB1]"
+          Id="Package\Candidato.Paths[Salida de origen de OLE DB2]"
           TopLeft="932,906">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41304,7 +41335,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de OLE DB]"
+          Id="Package\Candidato.Paths[Salida de origen de OLE DB1]"
           TopLeft="843.5,682">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41340,7 +41371,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de origen de OLE DB2]"
+          Id="Package\Candidato.Paths[Salida de origen de OLE DB]"
           TopLeft="675.5,523.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41412,7 +41443,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación7]"
+          Id="Package\Candidato.Paths[Salida de ordenación1]"
           TopLeft="628.5,632">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41448,7 +41479,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación6]"
+          Id="Package\Candidato.Paths[Salida de ordenación2]"
           TopLeft="807.333333333333,825.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41484,7 +41515,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación4]"
+          Id="Package\Candidato.Paths[Salida de ordenación8]"
           TopLeft="558,835">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41520,7 +41551,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación5]"
+          Id="Package\Candidato.Paths[Salida de ordenación3]"
           TopLeft="481,261">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41556,7 +41587,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación]"
+          Id="Package\Candidato.Paths[Salida de ordenación7]"
           TopLeft="197,334">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41592,7 +41623,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación3]"
+          Id="Package\Candidato.Paths[Salida de ordenación5]"
           TopLeft="339.666666666667,622">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41628,7 +41659,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación8]"
+          Id="Package\Candidato.Paths[Salida de ordenación]"
           TopLeft="681,1020">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41664,7 +41695,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación2]"
+          Id="Package\Candidato.Paths[Salida de ordenación4]"
           TopLeft="895,1022">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -41700,7 +41731,7 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Candidato.Paths[Salida de ordenación1]"
+          Id="Package\Candidato.Paths[Salida de ordenación6]"
           TopLeft="515.571428571429,424.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve

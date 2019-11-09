@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>40.117.179.53</TargetServer>
+        <TargetServer>localhost</TargetServer>
         <TargetDatabase>Grupo8</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

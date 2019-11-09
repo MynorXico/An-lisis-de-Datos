@@ -1,0 +1,285 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ee1831b1-c2b9-4e0c-9862-54eb4a0415b3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Candidato</ID>
+  <Name>Candidato</Name>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3499" scrolltop="-5450" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6191" y="12065" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Candidato" left="-1568" top="-450" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3810" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000e20e000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="Dimension_Candidato" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3499</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5450</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-1568</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-450</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="156">
+            <Shape Id="SK Candidato" Expanded="true">
+              <Attributes>
+                <Attribute Id="SK Candidato" />
+                <Attribute Id="Apellido Candidato" />
+                <Attribute Id="Fecha Nacimiento" />
+                <Attribute Id="Genero" />
+                <Attribute Id="ID Candidato" />
+                <Attribute Id="Municipio" />
+                <Attribute Id="Nombre Candidato" />
+                <Attribute Id="Nombre Colegio" />
+                <Attribute Id="Nombre Diversificado" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="3c22cde7-afca-4c16-a299-c2e75ed4bf2f">
+    <DataSourceViewID>GRUPO8 DWH</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="242acbb2-aaa1-434c-b25b-2b6681a7a811">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="7b0cd543-6382-4e78-8669-5491e8742a8a">
+      <ID>SK Candidato</ID>
+      <Name>SK Candidato</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="59345e73-6835-40ef-8998-40b0cd90c3a1">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bd9e31e0-baf9-4499-8b83-88e2e0b1f859">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>SK_Candidato</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="3c842979-48c4-4602-a5e2-37f249c22525">
+          <AttributeID>ID Candidato</AttributeID>
+          <Name>ID Candidato</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="edd4676e-2fe7-45de-a0b2-6fab756a8ea9">
+          <AttributeID>Nombre Candidato</AttributeID>
+          <Name>Nombre Candidato</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b1d24c70-3d2b-430d-98ae-7b827d1d8e3a">
+          <AttributeID>Apellido Candidato</AttributeID>
+          <Name>Apellido Candidato</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="45eeb04c-169f-405b-be93-8533d1100008">
+          <AttributeID>Genero</AttributeID>
+          <Name>Genero</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f6f4e296-267d-44c1-91ed-a47241cbd83a">
+          <AttributeID>Fecha Nacimiento</AttributeID>
+          <Name>Fecha Nacimiento</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1bf147cf-f78a-41c0-b5c7-ecbd1657ab73">
+          <AttributeID>Nombre Colegio</AttributeID>
+          <Name>Nombre Colegio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cbf7b93c-ff1d-4720-8654-b57a77f7b005">
+          <AttributeID>Nombre Diversificado</AttributeID>
+          <Name>Nombre Diversificado</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7efe4dcd-82e3-4c5a-a68a-345ab54a5ca0">
+          <AttributeID>Municipio</AttributeID>
+          <Name>Municipio</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="67dca8a0-6207-4239-a7f3-224d77d2312d">
+      <ID>ID Candidato</ID>
+      <Name>ID Candidato</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b0e6283d-5e06-48bf-bffc-0e18469f2305">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9e549022-ac58-4736-87e5-0fc17731155c">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>ID_Candidato</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1d29c1e6-e005-41fa-b475-9f553da4707e">
+      <ID>Nombre Candidato</ID>
+      <Name>Nombre Candidato</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="26d59d2d-b0d3-482b-afdb-5a139d1e6fe5">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="41ee1335-0b28-4e7f-ad75-b23e470dc68c">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>NombreCandidato</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1390ec60-3a63-4f9d-8572-a8336eb10bb5">
+      <ID>Apellido Candidato</ID>
+      <Name>Apellido Candidato</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3a2b2bef-763f-4caa-8d89-7dc4fd3ff748">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b96fb394-19fc-4a17-b01e-fdca8126f2f1">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>ApellidoCandidato</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a47b24b6-41d6-42dd-aa28-ba94576d090a">
+      <ID>Genero</ID>
+      <Name>Genero</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e31f686f-3ff3-4c71-bd51-908667aa5d07">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3dc3b650-1e5a-463d-90ea-8a31f10f80e3">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>Genero</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="eb759e01-0b11-49aa-b374-6b14e6d7fa78">
+      <ID>Fecha Nacimiento</ID>
+      <Name>Fecha Nacimiento</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="30b73b7f-ec07-4879-a19f-b298c22cf080">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f0104c06-8fba-4f52-8bf8-9100345df430">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>FechaNacimiento</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0b19f3b4-7886-4a8e-843d-c005fb4d6a65">
+      <ID>Nombre Colegio</ID>
+      <Name>Nombre Colegio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7d7195aa-eb33-4e5d-9024-1b77ed161068">
+          <DataType>WChar</DataType>
+          <DataSize>600</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="69d1d783-5307-4d3e-8535-9d7f46a01737">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>NombreColegio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="643ff2f9-5124-42ec-8f6e-1f961fbbeb71">
+      <ID>Nombre Diversificado</ID>
+      <Name>Nombre Diversificado</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d0ccc2c8-df35-4608-b137-b8201b7fef10">
+          <DataType>WChar</DataType>
+          <DataSize>600</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a579bfb5-8d4c-4f95-aef3-6e2bb5655d8e">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>NombreDiversificado</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="12f7e10b-1cce-4fcc-97b2-8ebc38a04d34">
+      <ID>Municipio</ID>
+      <Name>Municipio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="da3bdb1c-3ab6-4fcd-9864-6f59ebb575f6">
+          <DataType>WChar</DataType>
+          <DataSize>300</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="32b7e4d1-d374-4691-b8a1-34ef529f621a">
+            <TableID>Dimension_Candidato</TableID>
+            <ColumnID>Municipio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

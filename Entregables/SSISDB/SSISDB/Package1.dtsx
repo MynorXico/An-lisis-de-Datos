@@ -1,0 +1,962 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/8/2019 10:20:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LLLJTOF"
+  DTS:CreatorName="DESKTOP-LLLJTOF\mynor"
+  DTS:DTSID="{7B2CE823-EEE5-488F-BD5B-C1E631B62305}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="4106"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{521DC62A-C58D-48F1-AA97-62AECAE4865E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LLLJTOF]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{11515A0D-A2F0-4C50-A22E-EBEF0F380120}"
+      DTS:ObjectName="DESKTOP-LLLJTOF">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Provider=MSOLAP.8;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LLLJTOF.DWHGrupo8]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E36223AE-82FD-4217-AEA4-B712B5030238}"
+      DTS:ObjectName="DESKTOP-LLLJTOF.DWHGrupo8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=DWHGrupo8;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LLLJTOF.Grupo8]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{DDE6FE74-BECC-497A-AEE0-2C0701B720E8}"
+      DTS:ObjectName="DESKTOP-LLLJTOF.Grupo8">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-LLLJTOF;Initial Catalog=Grupo8;Provider=MSOLAP.8;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{4EE847E0-510C-4BD3-8E71-62650623CE95}"
+      DTS:ObjectName="localhost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;PROVIDER=MSOLAP;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{EE652A53-D06C-4659-B7DB-C215DB58AAA3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\Dimension Processing"
+              componentClassID="Microsoft.PXPipelineProcessDimension"
+              description="Dimension Processing"
+              name="Dimension Processing">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="ObjectRef">&lt;Object xmlns="http://schemas.microsoft.com/analysisservices/2003/engine"&gt;
+  &lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;
+  &lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;
+&lt;/Object&gt;</property>
+                <property
+                  dataType="System.Boolean"
+                  name="UseDefaultConfiguration">true</property>
+                <property
+                  dataType="System.Int32"
+                  name="KeyErrorLimit">1</property>
+                <property
+                  dataType="System.String"
+                  name="KeyErrorLogFile"></property>
+                <property
+                  dataType="System.UInt32"
+                  name="KeyErrorAction"
+                  typeConverter="KeyErrorAction">0</property>
+                <property
+                  dataType="System.UInt32"
+                  name="KeyErrorLimitAction"
+                  typeConverter="KeyErrorLimitAction">0</property>
+                <property
+                  dataType="System.UInt32"
+                  name="KeyNotFound"
+                  typeConverter="KeyErrorHandling">1</property>
+                <property
+                  dataType="System.UInt32"
+                  name="KeyDuplicate"
+                  typeConverter="KeyErrorHandling">0</property>
+                <property
+                  dataType="System.UInt32"
+                  name="NullKeyConvertedToUnknown"
+                  typeConverter="KeyErrorHandling">0</property>
+                <property
+                  dataType="System.UInt32"
+                  name="NullKeyNotAllowed"
+                  typeConverter="KeyErrorHandling">1</property>
+                <property
+                  dataType="System.Int32"
+                  name="ProcessType"
+                  typeConverter="ProcessType">2</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Dimension Processing.Connections[Analysis Services Connection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LLLJTOF.Grupo8]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LLLJTOF.Grupo8]"
+                  description="Analysis Services Connection"
+                  name="Analysis Services Connection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput]"
+                  hasSideEffects="true"
+                  name="AnalysisServicesServerInput">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[SK_Candidato]"
+                      cachedDataType="i4"
+                      cachedName="SK_Candidato"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[SK Candidato.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[SK_Candidato]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;SK Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;SK_Candidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;SK_Candidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[ID_Candidato]"
+                      cachedDataType="i4"
+                      cachedName="ID_Candidato"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[ID Candidato.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID_Candidato]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;ID Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;ID_Candidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;ID_Candidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[NombreCandidato]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NombreCandidato"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Nombre Candidato.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreCandidato]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Nombre Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;NombreCandidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;NombreCandidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[ApellidoCandidato]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="ApellidoCandidato"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Apellido Candidato.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ApellidoCandidato]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Apellido Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;ApellidoCandidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;ApellidoCandidato&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[Genero]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Genero"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Genero.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Genero]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Genero&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;Genero&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;Genero&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[FechaNacimiento]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaNacimiento"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Fecha Nacimiento.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaNacimiento]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Fecha Nacimiento&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;FechaNacimiento&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;FechaNacimiento&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[NombreColegio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="600"
+                      cachedName="NombreColegio"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Nombre Colegio.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreColegio]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Nombre Colegio&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;NombreColegio&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;NombreColegio&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[NombreDiversificado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="600"
+                      cachedName="NombreDiversificado"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Nombre Diversificado.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreDiversificado]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Nombre Diversificado&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;NombreDiversificado&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;NombreDiversificado&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].Columns[Municipio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="300"
+                      cachedName="Municipio"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Municipio.Key]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Municipio]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Municipio&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;Municipio&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;Municipio&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[SK Candidato.Key]"
+                      dataType="i4"
+                      name="SK Candidato.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?SK Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?SK Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;SK Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?SK Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?SK Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[ID Candidato.Key]"
+                      dataType="i4"
+                      name="ID Candidato.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?ID Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?ID Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;ID Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?ID Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?ID Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Nombre Candidato.Key]"
+                      dataType="wstr"
+                      length="100"
+                      name="Nombre Candidato.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Nombre Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Apellido Candidato.Key]"
+                      dataType="wstr"
+                      length="100"
+                      name="Apellido Candidato.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Apellido Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Apellido Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Apellido Candidato&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Apellido Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Apellido Candidato.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Genero.Key]"
+                      dataType="wstr"
+                      length="1"
+                      name="Genero.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Genero.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Genero.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Genero&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Genero.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Genero.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Fecha Nacimiento.Key]"
+                      dataType="date"
+                      name="Fecha Nacimiento.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Fecha Nacimiento.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Fecha Nacimiento.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Fecha Nacimiento&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Fecha Nacimiento.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Fecha Nacimiento.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Nombre Colegio.Key]"
+                      dataType="wstr"
+                      length="600"
+                      name="Nombre Colegio.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Colegio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Colegio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Nombre Colegio&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Colegio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Colegio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Nombre Diversificado.Key]"
+                      dataType="wstr"
+                      length="600"
+                      name="Nombre Diversificado.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Diversificado.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Diversificado.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Nombre Diversificado&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Diversificado.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Nombre Diversificado.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput].ExternalColumns[Municipio.Key]"
+                      dataType="wstr"
+                      length="300"
+                      name="Municipio.Key">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="BindingItem">&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Municipio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Municipio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;</property>
+                        <property
+                          dataType="System.String"
+                          name="Binding">&lt;Binding xmlns="http://schemas.microsoft.com/analysisservices/2003/engine" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;DatabaseID&gt;Grupo8&lt;/DatabaseID&gt;&lt;DimensionID&gt;Candidato&lt;/DimensionID&gt;&lt;AttributeID&gt;Municipio&lt;/AttributeID&gt;&lt;KeyColumns&gt;&lt;KeyColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Municipio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/KeyColumn&gt;&lt;/KeyColumns&gt;&lt;NameColumn&gt;&lt;Source xsi:type="ColumnBinding"&gt;&lt;TableID/&gt;&lt;ColumnID&gt;?Municipio.Key?&lt;/ColumnID&gt;&lt;/Source&gt;&lt;/NameColumn&gt;&lt;/Binding&gt;</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[Dimension].[Candidato]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LLLJTOF.DWHGrupo8]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LLLJTOF.DWHGrupo8]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[SK_Candidato]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[SK_Candidato]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[SK_Candidato]"
+                      name="SK_Candidato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID_Candidato]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Candidato]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID_Candidato]"
+                      name="ID_Candidato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreCandidato]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreCandidato]"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreCandidato]"
+                      name="NombreCandidato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ApellidoCandidato]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ApellidoCandidato]"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ApellidoCandidato]"
+                      name="ApellidoCandidato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Genero]"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Genero]"
+                      name="Genero"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaNacimiento]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaNacimiento]"
+                      name="FechaNacimiento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreColegio]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreColegio]"
+                      length="600"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreColegio]"
+                      name="NombreColegio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreDiversificado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreDiversificado]"
+                      length="600"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[NombreDiversificado]"
+                      name="NombreDiversificado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Municipio]"
+                      length="300"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Municipio]"
+                      name="Municipio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaInicioValidez]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaInicioValidez]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaInicioValidez]"
+                      name="FechaInicioValidez"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaFinValidez]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaFinValidez]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaFinValidez]"
+                      name="FechaFinValidez"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaCreacion]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaCreacion]"
+                      name="FechaCreacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[UsuarioCreacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[UsuarioCreacion]"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[UsuarioCreacion]"
+                      name="UsuarioCreacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaModificacion]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[FechaModificacion]"
+                      name="FechaModificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[UsuarioModificacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[UsuarioModificacion]"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[UsuarioModificacion]"
+                      name="UsuarioModificacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID_Batch]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Batch]"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID_Batch]"
+                      name="ID_Batch"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID_SourceSystem]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_SourceSystem]"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[ID_SourceSystem]"
+                      name="ID_SourceSystem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Edad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Edad]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Edad]"
+                      name="Edad"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[SK_Candidato]"
+                      dataType="i4"
+                      name="SK_Candidato" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Candidato]"
+                      dataType="i4"
+                      name="ID_Candidato" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreCandidato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NombreCandidato" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ApellidoCandidato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ApellidoCandidato" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Genero" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      name="FechaNacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreColegio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="600"
+                      name="NombreColegio" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreDiversificado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="600"
+                      name="NombreDiversificado" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      name="Municipio" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaInicioValidez]"
+                      dataType="dbTimeStamp"
+                      name="FechaInicioValidez" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaFinValidez]"
+                      dataType="dbTimeStamp"
+                      name="FechaFinValidez" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioCreacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      name="FechaModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="UsuarioModificacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_Batch]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ID_Batch" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ID_SourceSystem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ID_SourceSystem" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Edad]"
+                      dataType="i4"
+                      name="Edad" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[SK_Candidato]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[SK_Candidato]"
+                      name="SK_Candidato" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID_Candidato]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID_Candidato]"
+                      name="ID_Candidato" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NombreCandidato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NombreCandidato]"
+                      name="NombreCandidato" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ApellidoCandidato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ApellidoCandidato]"
+                      name="ApellidoCandidato" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Genero]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Genero]"
+                      name="Genero" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaNacimiento]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaNacimiento]"
+                      name="FechaNacimiento" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NombreColegio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="600"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NombreColegio]"
+                      name="NombreColegio" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NombreDiversificado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="600"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[NombreDiversificado]"
+                      name="NombreDiversificado" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="300"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Municipio]"
+                      name="Municipio" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaInicioValidez]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaInicioValidez]"
+                      name="FechaInicioValidez" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaFinValidez]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaFinValidez]"
+                      name="FechaFinValidez" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaCreacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaCreacion]"
+                      name="FechaCreacion" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UsuarioCreacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UsuarioCreacion]"
+                      name="UsuarioCreacion" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaModificacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[FechaModificacion]"
+                      name="FechaModificacion" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UsuarioModificacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[UsuarioModificacion]"
+                      name="UsuarioModificacion" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID_Batch]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID_Batch]"
+                      name="ID_Batch" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID_SourceSystem]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ID_SourceSystem]"
+                      name="ID_SourceSystem" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Edad]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Edad]"
+                      name="Edad" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+              endId="Package\Tarea Flujo de datos\Dimension Processing.Inputs[AnalysisServicesServerInput]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="245,105" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[DESKTOP-LLLJTOF]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[localhost]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Tarea Flujo de datos\Dimension Processing"
+          TopLeft="286,226" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Tarea Flujo de datos\Origen de OLE DB"
+          TopLeft="315,108" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="397,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.5,76"
+              Start="0,0"
+              End="-20.5,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="-4,38" />
+                  <mssgle:LineSegment
+                    End="-16.5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.5,38"
+                    Point2="-20.5,38"
+                    Point3="-20.5,42" />
+                  <mssgle:LineSegment
+                    End="-20.5,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[DESKTOP-LLLJTOF.Grupo8]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

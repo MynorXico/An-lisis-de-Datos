@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{91EC13DA-5C2F-4BC6-82A4-F066FC29949E}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{9C2B97F5-BC7F-46F8-B977-73AD12D7B25B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,12 @@
       DTS:ObjectName="DESKTOP-I3AC1QB\MSSQLSERVER01.Admisiones_DWHProyecto">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=40.117.179.53;Initial Catalog=GRUPO8_DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=40.117.179.53;User ID=Grupo8;Initial Catalog=GRUPO8_DWH;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAx+XTUT73rEKGkllZoP0erAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADMADy/Ckdj/o9+rP2NJBcAEsfYvoWZh17AIlCfFxaiegAAAAAOgAAAAAIAACAAAAA1RuVP9JBPD85W5WEYJHy5gdt7ESnoAzVaeizlgYtU9iAAAAD7ICYhF2LU+BhupJYpOCs0o59B6JeBmLtZ4StIvy6vMUAAAACbMe+Yn9SaFBIMRo7ln9Xl815uLMiTH/qdl+HtjUJtyoAR6sHeKmKNdTY2/TR7aW5Eccu2nspIhVD2I2ui38/f</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -20711,59 +20716,59 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="244.8,41.6"
+          Size="245,42"
           Id="Package\Borrar Dimensiones, Staging y Fact"
           TopLeft="30.1428576561863,7.64705893077665" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\INSERT A STAGING"
           TopLeft="57.0000009707044,101.858824957944" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Insert clasificacion"
           TopLeft="859.714296625585,895.094125446069" />
         <NodeLayout
-          Size="129.6,41.6"
+          Size="130,42"
           Id="Package\Insert Fact"
           TopLeft="1125.71430044028,955.670598314378" />
         <NodeLayout
-          Size="145.6,41.6"
+          Size="146,42"
           Id="Package\Merge Carrera"
           TopLeft="289.42857635751,366.729415505485" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Merge Examen Area"
           TopLeft="960.448995948185,724.62185497515" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Merge Geografia"
           TopLeft="1140.71430514053,838.117658813107" />
         <NodeLayout
-          Size="219.2,41.6"
+          Size="219,42"
           Id="Package\Merge Staging Candidato DIM"
           TopLeft="8.42857157210844,242.564709284232" />
         <NodeLayout
-          Size="206.4,41.6"
+          Size="206,42"
           Id="Package\Merge Staging DIM Colegio"
           TopLeft="434.795925499399,498.959670863267" />
         <NodeLayout
-          Size="232,41.6"
+          Size="232,42"
           Id="Package\Merge Staging DIM Diversificado"
           TopLeft="665.510215415204,660.285720692964" />
         <NodeLayout
-          Size="160,41.6"
+          Size="160,42"
           Id="Package\SCD CANDIDATO"
           TopLeft="39.2857149547463,170.988237692163" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\SCD CARRERA"
           TopLeft="283.000004819461,300.376474800902" />
         <NodeLayout
-          Size="136,41.6"
+          Size="136,42"
           Id="Package\SCD Colegio"
           TopLeft="454.000007731574,438.68235839791" />
         <NodeLayout
-          Size="160.8,41.6"
+          Size="161,42"
           Id="Package\SCD Diversificado"
           TopLeft="690.857154622369,581.260509548716" />
         <EdgeLayout
