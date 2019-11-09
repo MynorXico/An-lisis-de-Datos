@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>Default</ProcessingOption>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,84 +19,84 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>k/d9hx5edCch5h+V2UHI1EEwY6U=3/11/2019 11:15:433/11/2019 11:09:55</TimeStamp>
+        <TimeStamp>k/d9hx5edCch5h+V2UHI1EEwY6U=3/11/2019 11:15:433/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>GRUPO8 DWH</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>LMV1OSPqqR780dTuOhprP8saiTQ=3/11/2019 11:10:583/11/2019 11:10:54</TimeStamp>
+        <TimeStamp>LMV1OSPqqR780dTuOhprP8saiTQ=3/11/2019 11:10:583/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>GRUPO8 DWH</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>wKafiX2P4/8W4xnIherqMRvz1y8=3/11/2019 11:11:243/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>YDj6iaPZqDllUnJlwokhw720ZcU=3/11/2019 23:30:163/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>Examen Area</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>0ZlGRRnJKwbzt2+/8B9sp23FJ/U=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>T+/SxN/6459FaGCN+aojFY3UmUA=3/11/2019 23:30:163/11/2019 22:28:09</TimeStamp>
         <ID>
           <String>Clasificacion</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>5R8reF+inll8cLUPZRC3oiFhR60=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>pr04+XmYmMQNZS4IhJlQhdknX+s=3/11/2019 23:30:163/11/2019 22:28:09</TimeStamp>
         <ID>
           <String>Carrera</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Yj1fSmey7gaf/j8mMHgOEPUoBAA=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>oEwuufZzK4WEW+O1AMdAdmhWUCM=3/11/2019 23:30:163/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>Geografia</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>noVO8Q3kcGRPVL1Tg3cLP1dsncM=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>thzcgYEqkli0Qk/RIhw6gQoUU2E=3/11/2019 23:30:163/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>Fecha</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>IbVtk3Sm/yqpJQMGs42BueL76jQ=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>A5ISZ0W0Aq+bvLZqIJ2y2rjhD/Y=3/11/2019 23:30:163/11/2019 22:28:09</TimeStamp>
         <ID>
           <String>Candidato</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>YNX1JWC0O1shamsK3ySk14Spg/I=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>OrUOivFbJ2Zu+9jeQPc+RjyA8e8=3/11/2019 23:30:163/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>Colegio Candidato</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>zhoFWbwgrlMejw2FJIaQ4c+F+m8=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>WQW+a5WEuZTBH0jZ9FEOr87sxL8=3/11/2019 23:30:163/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>Diversificado</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>qzEtbjNMyrHHDgqWsdBw5B1pjTI=3/11/2019 11:11:253/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>qzEtbjNMyrHHDgqWsdBw5B1pjTI=3/11/2019 11:11:253/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>Resultado Admision</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>xRaLKMO0EJqKFEOsmz2LbOQdeb8=3/11/2019 11:11:253/11/2019 11:11:242s/NOvGhih6n6ZqLDvpQT7xg5hc=3/11/2019 11:11:243/11/2019 11:11:24</TimeStamp>
+        <TimeStamp>ho5wYZ36JnlB2+y9nEbWnAHJwlk=3/11/2019 23:30:193/11/2019 22:28:102s/NOvGhih6n6ZqLDvpQT7xg5hc=3/11/2019 11:11:243/11/2019 22:28:10</TimeStamp>
         <ID>
           <String>GRUPO8 DWH</String>
         </ID>
@@ -104,7 +104,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>+6X2yEoZ58vTM3u1Sdv/zoGlvHQ=27/10/2019 23:00:5927/10/2019 23:00:59</TimeStamp>
+      <TimeStamp>+6X2yEoZ58vTM3u1Sdv/zoGlvHQ=27/10/2019 23:00:593/11/2019 22:28:10</TimeStamp>
       <ID>
         <String>Grupo8</String>
       </ID>
@@ -113,5 +113,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2019-11-03T17:17:02.32Z</LastDeployed>
+  <LastDeployed>2019-11-04T05:38:54.746667Z</LastDeployed>
 </DeploymentSnapshot>
